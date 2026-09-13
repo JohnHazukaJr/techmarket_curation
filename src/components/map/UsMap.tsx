@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import type { Feature, Geometry } from "geojson";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
-import { METRICS, val } from "../../data/metrics";
+import { METRICS, live, val } from "../../data/metrics";
 import { FIPS, fipsId, stateFromFips } from "../../data/states";
 import { useCollection } from "../../state/CollectionContext";
 import type { Metro } from "../../types/collection";
@@ -154,10 +154,12 @@ export function UsMap() {
 
     const list = selState ? metros.filter((m) => m.state === selState) : metros;
     const placed = list.filter((m) => projection([m.lon, m.lat]));
-    const arr = metros.map((m) => val(m, metric));
-    const mn = Math.min(...arr);
-    const mx = Math.max(...arr);
     const def = METRICS.find((x) => x.k === metric);
+    const liveVals = def
+      ? metros.filter((m) => live(m, def)).map((m) => val(m, metric))
+      : [];
+    const mn = liveVals.length ? Math.min(...liveVals) : 0;
+    const mx = liveVals.length ? Math.max(...liveVals) : 1;
 
     const pins = gPins.selectAll<SVGGElement, Metro>("g.pin").data(placed, (d) => d.id);
     pins.exit().remove();
@@ -180,8 +182,9 @@ export function UsMap() {
       .text((d) => (selState ? d.name.split("–")[0] : ""))
       .attr("opacity", selState ? 1 : 0);
     all.select(".halo").attr("r", (d) => {
+      if (!def || !live(d, def)) return 9;
       const n = (val(d, metric) - mn) / (mx - mn || 1);
-      return 8 + (def?.hi ? n : 1 - n) * 13;
+      return 8 + (def.hi ? n : 1 - n) * 13;
     });
   }, [metros, metric, selState, openMetro, atlasReady]);
 

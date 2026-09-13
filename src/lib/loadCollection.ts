@@ -14,6 +14,6 @@ export async function loadCollection(): Promise<Collection> {
     provenance: file.provenance,
     sources: catalog.sources,
     categories: catalog.categories,
-    slots: catalog.slots,
+    slots: catalog.slots ?? {},
   };
 }

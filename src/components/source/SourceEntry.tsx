@@ -1,3 +1,5 @@
+import { CiteTip } from "../cite/CiteTip";
+import { geoBadge, metrosLabel } from "../../lib/sources";
 import { useCollection } from "../../state/CollectionContext";
 
 export function SourceEntry() {
@@ -14,7 +16,10 @@ export function SourceEntry() {
         <h1 id="se-title">{s.title}</h1>
         <div className="tags" id="se-tags">
           <span className="tag">{s.type}</span>
-          <span className="tag">{s.metros === "all" ? "all metros" : `#${s.metros}`}</span>
+          <span className="tag" title={s.geoLabel}>
+            {geoBadge(s)}
+          </span>
+          <span className="tag">{metrosLabel(s)}</span>
         </div>
         <div className="annblock">
           <h3>What it covers</h3>
@@ -32,6 +37,22 @@ export function SourceEntry() {
           <h3>Limitations</h3>
           <p id="se-lim">{s.lim}</p>
         </div>
+        {s.facts?.map((fact) => (
+          <div className="annblock" key={fact.text}>
+            <h3>Figure stated in the collection</h3>
+            <p>
+              {fact.text}.{" "}
+              <CiteTip
+                unit={fact.unit}
+                geography={fact.geography}
+                dataYear={fact.dataYear}
+                published={fact.published}
+                href={s.url}
+              />
+            </p>
+            {fact.note ? <p>{fact.note}</p> : null}
+          </div>
+        ))}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", paddingTop: 6 }}>
           <a className="btn" id="se-url" href={s.url} target="_blank" rel="noopener">
             Visit source ↗
@@ -55,12 +76,20 @@ export function SourceEntry() {
           <b id="se-type">{s.type}</b>
         </div>
         <div className="kv">
-          <i>Metro tags</i>
-          <b id="se-metros">{s.metros === "all" ? "Applies to every tracked metro" : s.metros}</b>
+          <i>Geography</i>
+          <b id="se-geo">{s.geoLabel}</b>
         </div>
         <div className="kv">
-          <i>Last checked</i>
-          <b>Sep 2026</b>
+          <i>Metro tags</i>
+          <b id="se-metros">{metrosLabel(s)}</b>
+        </div>
+        <div className="kv">
+          <i>Data year</i>
+          <b id="se-year">{s.dataYear}</b>
+        </div>
+        <div className="kv">
+          <i>Published</i>
+          <b id="se-pubdate">{s.published}</b>
         </div>
       </aside>
     </div>

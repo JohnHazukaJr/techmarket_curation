@@ -8,7 +8,17 @@ function ProvenanceRow({ record, todo }: { record: ProvenanceRecord; todo: boole
         {record.source.toUpperCase()} · {record.vintage}
         {record.released ? ` · released ${record.released}` : ""}
       </i>
-      <b>{record.table}</b>
+      <b>
+        {record.table}
+        {record.url ? (
+          <>
+            {" "}
+            <a href={record.url} target="_blank" rel="noopener">
+              source
+            </a>
+          </>
+        ) : null}
+      </b>
     </div>
   );
 }
@@ -28,22 +38,30 @@ export function ProvenancePanel() {
           <ProvenanceRow key={p.table} record={p} todo={false} />
         ))}
       </div>
-      <div className="mono" style={{ marginTop: 4 }}>
-        Tables still to pull
-      </div>
-      <div id="md-prov-todo" className="prov-stack">
-        {todo.map((p) => (
-          <ProvenanceRow key={p.table} record={p} todo />
-        ))}
-      </div>
-      <div className="mono" style={{ marginTop: 4 }}>
-        National reference figures
-      </div>
-      <div id="md-prov-ref" className="prov-stack">
-        {refs.map((p) => (
-          <ProvenanceRow key={p.table} record={p} todo={false} />
-        ))}
-      </div>
+      {todo.length ? (
+        <>
+          <div className="mono" style={{ marginTop: 4 }}>
+            Tables the PDF names but does not quantify
+          </div>
+          <div id="md-prov-todo" className="prov-stack">
+            {todo.map((p) => (
+              <ProvenanceRow key={p.table} record={p} todo />
+            ))}
+          </div>
+        </>
+      ) : null}
+      {refs.length ? (
+        <>
+          <div className="mono" style={{ marginTop: 4 }}>
+            National reference figures
+          </div>
+          <div id="md-prov-ref" className="prov-stack">
+            {refs.map((p) => (
+              <ProvenanceRow key={p.table} record={p} todo={false} />
+            ))}
+          </div>
+        </>
+      ) : null}
     </div>
   );
 }

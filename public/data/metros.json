@@ -14,47 +14,37 @@
    "released": "2024-12-12",
    "url": "https://www.bea.gov/sites/default/files/2024-12/rpp1224.pdf"
   },
-  "bls_national": {
-   "source": "bls",
-   "table": "OEWS, 15-0000 Computer and Mathematical Occupations, national",
-   "vintage": "May 2023",
-   "values": {
-    "meanAnnual": 113140,
-    "medianAnnual": 104200
-   },
-   "url": "https://www.bls.gov/oes/2023/may/oes150000.htm",
-   "group": "reference"
-  },
   "acs_dp04": {
    "source": "acs",
    "table": "ACS 1-Year Data Profile DP04, Selected Housing Characteristics",
    "vintage": "2024",
    "variables": {
-    "rent": "DP04_0134E (median gross rent)",
-    "home": "DP04_0089E (median value, owner-occupied units)"
+    "rent": "median gross rent as named in the ACS 2024 DP04 source",
+    "home": "home values as named in the ACS 2024 DP04 source"
    },
-   "status": "awaiting pull",
+   "status": "awaiting pull — source does not give a comparable metro figure",
    "url": "https://data.census.gov/table/ACSDP1Y2024.DP04"
   },
   "bls_oews_metro": {
    "source": "bls",
-   "table": "OEWS Metropolitan Area Occupational Employment and Wage Estimates, SOC 15-0000",
-   "vintage": "May 2024",
+   "table": "May 2025 Metropolitan and Nonmetropolitan Area Occupational Employment and Wage Estimates",
+   "vintage": "May 2025",
    "variables": {
-    "salary": "A_MEDIAN for 15-0000 by MSA"
+    "salary": "metro OEWS wages, May 2025 vintage"
    },
-   "status": "awaiting pull",
-   "url": "https://www.bls.gov/oes/2024/may/oessrcma.htm"
+   "status": "awaiting pull — source does not give a comparable metro figure",
+   "url": "https://www.bls.gov/oes/current/oessrcma.htm"
   },
   "fbi_cde": {
    "source": "fbi",
-   "table": "FBI Crime Data Explorer — agency-level violent crime, aggregated to MSA",
+   "table": "FBI 2024 reported crimes in the nation",
    "vintage": "2024",
+   "released": "2025-08-05",
    "variables": {
-    "crime": "violent offenses per 100,000 population"
+    "crime": "2024 reported crimes; release date August 5, 2025"
    },
-   "status": "awaiting pull",
-   "url": "https://cde.ucr.cjis.gov/"
+   "status": "awaiting pull — source does not give a comparable metro figure",
+   "url": "https://www.fbi.gov/news/press-releases/fbi-releases-2024-reported-crimes-in-the-nation-statistics"
   }
  },
  "metros": [
@@ -327,15 +317,45 @@
    "rent": null,
    "home": null,
    "crime": null
+  },
+  {
+   "id": "orlando",
+   "name": "Orlando–Kissimmee–Sanford, FL",
+   "state": "FL",
+   "lon": -81.38,
+   "lat": 28.54,
+   "rpp": 101.1,
+   "rppHousing": 121,
+   "income": 133906,
+   "incomeGrowth": 3.3,
+   "salary": null,
+   "rent": null,
+   "home": null,
+   "crime": null
+  },
+  {
+   "id": "tampa",
+   "name": "Tampa–St. Petersburg–Clearwater, FL",
+   "state": "FL",
+   "lon": -82.46,
+   "lat": 27.95,
+   "rpp": 103.4,
+   "rppHousing": 123.3,
+   "income": 171453,
+   "incomeGrowth": 0.5,
+   "salary": null,
+   "rent": null,
+   "home": null,
+   "crime": null
   }
  ],
  "fillTemplate": {
-  "note": "Add these four keys to each metro object as you pull them. Leave a key absent and the UI renders it as an explicit gap rather than a number.",
+  "note": "Add these four keys to each metro object only when a collection source states a comparable metro figure. Leave a key null and the UI renders it as an explicit gap rather than a number.",
   "keys": {
-   "salary": "integer USD, BLS OEWS A_MEDIAN",
-   "rent": "integer USD/month, ACS DP04_0134E",
-   "home": "integer USD, ACS DP04_0089E",
-   "crime": "float per 100k, FBI CDE"
+   "salary": "USD annual, BLS May 2025 metro OEWS",
+   "rent": "USD/month, Census ACS 2024 DP04",
+   "home": "USD, Census ACS 2024 DP04",
+   "crime": "FBI 2024 reported crimes"
   }
  }
 }

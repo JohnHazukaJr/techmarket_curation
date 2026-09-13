@@ -26,10 +26,10 @@ export const metroSchema = z.object({
   state: stateCode,
   lon: z.number(),
   lat: z.number(),
-  rpp: z.number(),
-  rppHousing: z.number(),
-  income: z.number(),
-  incomeGrowth: z.number(),
+  rpp: z.number().nullable(),
+  rppHousing: z.number().nullable(),
+  income: z.number().nullable(),
+  incomeGrowth: z.number().nullable(),
   salary: z.number().nullable().optional().default(null),
   rent: z.number().nullable().optional().default(null),
   home: z.number().nullable().optional().default(null),
@@ -54,9 +54,21 @@ export const collectionFileSchema = z.object({
   fillTemplate: z.unknown().optional(),
 });
 
+const geoLevel = z.enum(["msa", "city", "region", "national"]);
+
+export const sourceFactSchema = z.object({
+  text: z.string().min(1),
+  unit: z.string().min(1),
+  geography: z.string().min(1),
+  dataYear: z.string().min(1),
+  published: z.string().min(1),
+  note: z.string().optional(),
+});
+
 export const sourceSchema = z.object({
   id: z.string().min(1),
   cat: z.string().min(1),
+  cats: z.array(z.string()).min(1),
   path: z.string().min(1),
   title: z.string().min(1),
   pub: z.string().min(1),
@@ -66,11 +78,17 @@ export const sourceSchema = z.object({
   value: z.string().min(1),
   aud: z.string().min(1),
   lim: z.string().min(1),
-  metros: z.string().min(1),
+  use: z.string().optional(),
+  metros: z.array(z.string()),
+  geoLevel,
+  geoLabel: z.string().min(1),
+  dataYear: z.string().min(1),
+  published: z.string().min(1),
+  facts: z.array(sourceFactSchema).optional(),
 });
 
 export const sourcesFileSchema = z.object({
   categories: z.array(z.string()).min(1),
-  slots: z.record(z.array(z.string())),
+  slots: z.record(z.array(z.string())).optional().default({}),
   sources: z.array(sourceSchema).min(1),
 });

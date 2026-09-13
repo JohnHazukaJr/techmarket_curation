@@ -8,7 +8,7 @@ export function CompareScreen() {
       <div className="detailhead glass">
         <div>
           <div className="mono">Compare</div>
-          <h1>Three metros, same factors</h1>
+          <h1>Three metros, same family questions</h1>
         </div>
         <button type="button" className="btn ghost" onClick={() => go("map")}>
           ← Back to map
@@ -16,8 +16,9 @@ export function CompareScreen() {
       </div>
       <CompareGrid />
       <div className="note">
-        Outlined cell = best of the three on that factor · dashed rows are factors not yet pulled from
-        their source · no value on this screen is estimated or interpolated
+        “Best of live” only marks values that actually exist at the same grain · dashed cells are
+        factors a collection source does not give as a comparable metro figure · no value here is
+        estimated
       </div>
     </section>
   );

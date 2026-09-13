@@ -46,16 +46,18 @@ export type Route =
   | { screen: "source"; id: string }
   | { screen: "about" };
 
+export type GeoLevel = "msa" | "city" | "region" | "national";
+
 export interface Metro {
   id: string;
   name: string;
   state: StateCode;
   lon: number;
   lat: number;
-  rpp: number;
-  rppHousing: number;
-  income: number;
-  incomeGrowth: number;
+  rpp: number | null;
+  rppHousing: number | null;
+  income: number | null;
+  incomeGrowth: number | null;
   salary: number | null;
   rent: number | null;
   home: number | null;
@@ -74,9 +76,19 @@ export interface ProvenanceRecord {
   group?: string;
 }
 
+export interface SourceFact {
+  text: string;
+  unit: string;
+  geography: string;
+  dataYear: string;
+  published: string;
+  note?: string;
+}
+
 export interface Source {
   id: string;
   cat: string;
+  cats: string[];
   path: string;
   title: string;
   pub: string;
@@ -86,7 +98,13 @@ export interface Source {
   value: string;
   aud: string;
   lim: string;
-  metros: string;
+  use?: string;
+  metros: string[];
+  geoLevel: GeoLevel;
+  geoLabel: string;
+  dataYear: string;
+  published: string;
+  facts?: SourceFact[];
 }
 
 export interface MetricDef {
@@ -96,6 +114,10 @@ export interface MetricDef {
   src: string;
   cite: string;
   pending?: string;
+  unit: string;
+  dataYear: string;
+  published: string;
+  url: string;
   fmt: (value: number) => string;
 }
 

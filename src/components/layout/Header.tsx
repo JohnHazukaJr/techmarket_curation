@@ -18,7 +18,7 @@ export function Header() {
         <div className="brandmark" />
         <div>
           <div className="t">Tech-Hub Housing Markets</div>
-          <div className="s">A curated collection · CMPA 4301 · John Hazuka</div>
+          <div className="s">Live and raise a young family · CMPA 4301 · John Hazuka</div>
         </div>
       </div>
       <nav>
