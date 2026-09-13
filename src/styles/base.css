@@ -1,0 +1,28 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);color:var(--ink);min-height:100vh;
+  background:
+    radial-gradient(900px 600px at 12% 8%, oklch(0.93 0.05 250/.9), transparent 65%),
+    radial-gradient(760px 520px at 88% 14%, oklch(0.93 0.045 165/.75), transparent 62%),
+    radial-gradient(720px 640px at 70% 92%, oklch(0.93 0.05 300/.6), transparent 60%),
+    oklch(0.965 0.008 255);}
+html[data-dir="b"] body{
+  background:
+    radial-gradient(900px 600px at 10% 6%, oklch(0.94 0.045 70/.95), transparent 64%),
+    radial-gradient(740px 520px at 90% 20%, oklch(0.94 0.035 30/.8), transparent 60%),
+    radial-gradient(700px 620px at 60% 95%, oklch(0.94 0.03 150/.6), transparent 60%),
+    oklch(0.972 0.008 80);}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--ink);text-decoration:underline}
+.glass{background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--edge);border-radius:var(--r);box-shadow:var(--shadow)}
+.mono{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+h1,h2,h3{font-family:var(--display);font-weight:var(--display-w);letter-spacing:var(--display-ls);margin:0;text-wrap:pretty}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:10px 15px;border-radius:99px;
+  background:var(--ink);color:#fff;border:0;cursor:pointer;font-family:var(--font);text-decoration:none}
+.btn:hover{background:var(--accent);color:#fff;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--hair)}
+.note{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);text-align:center}
+.tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:99px;background:rgba(0,0,0,.05);color:var(--ink-2)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.quote{padding:16px 18px;border-left:3px solid var(--accent);background:var(--glass-2);border-radius:0 calc(var(--r) - 10px) calc(var(--r) - 10px) 0;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+html[data-dir="b"] .quote{font-family:var(--display);font-style:italic;font-size:16px}

@@ -1,0 +1,612 @@
+{
+  "categories": [
+    "Jobs and salaries",
+    "Housing and affordability",
+    "Cost of living",
+    "Safety and family life",
+    "Overall tech-hub comparisons",
+    "Community perspectives"
+  ],
+  "slots": {},
+  "sources": [
+    {
+      "id": "bls",
+      "cat": "Jobs and salaries",
+      "cats": [
+        "Jobs and salaries"
+      ],
+      "path": "Jobs and salaries › Metro employment and wages",
+      "title": "BLS Metro Employment and Wages",
+      "pub": "U.S. Bureau of Labor Statistics",
+      "type": "Federal statistical (primary)",
+      "url": "https://www.bls.gov/oes/current/oessrcma.htm",
+      "covers": "The Bureau of Labor Statistics provides employment and wage estimates for occupations across U.S. metro areas, including different kinds of technology jobs.",
+      "value": "I think this is one of my better starting points because I can compare actual job and pay data. As I get closer to graduating, I want to know where a tech career could support a young family without most of the income going toward housing.",
+      "aud": "Students approaching graduation and parents comparing places for a tech career would benefit.",
+      "lim": "The wages include experienced workers, so they are not necessarily what I would earn starting out. Employment totals also do not tell me who is currently hiring.",
+      "geoLevel": "national",
+      "geoLabel": "Metropolitan and nonmetropolitan area OEWS tables — comparable across MSAs",
+      "metros": [],
+      "dataYear": "May 2025",
+      "published": "May 2025 OEWS vintage (current metro tables)",
+      "format": "federal table"
+    },
+    {
+      "id": "levelsfyi",
+      "cat": "Jobs and salaries",
+      "cats": [
+        "Jobs and salaries"
+      ],
+      "path": "Jobs and salaries › Entry-level software pay",
+      "title": "Entry Level Software Engineer Salaries",
+      "pub": "Levels.fyi",
+      "type": "Industry / self-reported compensation",
+      "url": "https://www.levels.fyi/t/software-engineer/levels/entry-level/locations/united-states",
+      "covers": "This resource focuses on entry-level software engineer compensation and lets readers explore different locations. Compensation includes base salary, stock, and bonuses.",
+      "value": "I like that it gets closer to what someone might earn after graduating. For my comparison, I would focus on base pay because I want to understand what regular income could cover for a young family, rather than plan around a larger total that includes stock.",
+      "aud": "New graduates comparing offers and families planning around an early-career income would benefit.",
+      "lim": "The submissions may not represent every employer. I would check how recent they are and compare them with BLS instead of assuming the listed amount is a guaranteed starting salary.",
+      "geoLevel": "national",
+      "geoLabel": "United States entry-level software engineer listings — not a metro statistical table",
+      "metros": [],
+      "dataYear": "as posted on Levels.fyi",
+      "published": "Living page; check dates on submissions",
+      "format": "tool"
+    },
+    {
+      "id": "orlando-econ",
+      "cat": "Jobs and salaries",
+      "cats": [
+        "Jobs and salaries"
+      ],
+      "path": "Jobs and salaries › Orlando tech employment",
+      "title": "Orlando Tech Employment Nears 80,000",
+      "pub": "Neil Hamilton, Orlando Economic Partnership",
+      "type": "Regional economic development",
+      "url": "https://news.orlando.org/blog/orlando-tech-employment-nears-80000/",
+      "covers": "This article looks at Orlando tech employment, pay, and workforce characteristics using 2024 data. It explains the difference between technology occupations and jobs at technology companies.",
+      "value": "Orlando is one of the Florida areas I want to look at more closely. This helps me understand the career side before comparing whether housing and everyday expenses would work for a young family.",
+      "aud": "People considering a technology career in the Orlando metro would benefit.",
+      "lim": "The publisher promotes the region, and the 2025 employment number is a projection. The salary figure is not starting pay, and the article does not tell me about schools, childcare, or specific neighborhoods.",
+      "geoLevel": "msa",
+      "geoLabel": "Orlando tech employment as described in the article — not Tampa MSA or Sarasota",
+      "metros": [
+        "orlando"
+      ],
+      "dataYear": "2024 data; 2025 projection in the title",
+      "published": "July 3, 2025",
+      "facts": [
+        {
+          "text": "Tech employment nears 80,000",
+          "unit": "tech jobs (article title / 2025 projection)",
+          "geography": "Orlando area as defined in the article",
+          "dataYear": "2025 projection, using 2024 data",
+          "published": "July 3, 2025",
+          "note": "The title is the 2025 projection. The article uses 2024 data; I am not treating 80,000 as a 2024 count."
+        }
+      ],
+      "format": "article"
+    },
+    {
+      "id": "acs",
+      "cat": "Housing and affordability",
+      "cats": [
+        "Housing and affordability"
+      ],
+      "path": "Housing and affordability › Housing characteristics",
+      "title": "Census Housing Characteristics",
+      "pub": "U.S. Census Bureau",
+      "type": "Federal statistical (primary)",
+      "url": "https://data.census.gov/table/ACSDP1Y2024.DP04",
+      "covers": "This Census table includes home values, rent, housing expenses, and how much household income goes toward housing.",
+      "value": "Housing is a huge part of whether I would actually consider moving somewhere. I want to compare places where a young family could have enough space without most of the income going toward rent or a mortgage. Using the same table across metros gives me a consistent starting point.",
+      "aud": "Families comparing renting and buying in different areas would benefit.",
+      "lim": "The 2024 estimates do not show current listings or what a home with the space I need would cost. I would still need to look at neighborhoods and current housing options.",
+      "geoLevel": "national",
+      "geoLabel": "ACS 1-Year DP04 by metro / MSA — not city limits or a single neighborhood",
+      "metros": [],
+      "dataYear": "2024",
+      "published": "2024 ACS 1-year Data Profile DP04",
+      "format": "federal table"
+    },
+    {
+      "id": "hud",
+      "cat": "Housing and affordability",
+      "cats": [
+        "Housing and affordability"
+      ],
+      "path": "Housing and affordability › Sarasota housing market",
+      "title": "Sarasota Housing Market Analysis",
+      "pub": "U.S. Department of Housing and Urban Development, Office of Policy Development and Research",
+      "type": "Federal case study",
+      "url": "https://www.huduser.gov/portal/publications/pdf/NorthPortSarasotaBradentonFL-CHMA-25.pdf",
+      "covers": "This HUD report looks at employment, population growth, home sales, rentals, construction, and expected housing demand in the North Port-Sarasota-Bradenton area.",
+      "value": "Sarasota is somewhere I would actually consider living, so I wanted a closer look at that housing market. It helps me understand the area before figuring out whether it would make sense for a young family and a technology career.",
+      "aud": "Families considering Sarasota or Bradenton who want more than a single home-price number would benefit.",
+      "lim": "The report reflects April 2025 conditions, and its forecasts are estimates. It does not answer my questions about specific schools, neighborhood safety, or the availability of tech jobs.",
+      "geoLevel": "msa",
+      "geoLabel": "North Port–Sarasota–Bradenton MSA only — not Tampa or Orlando",
+      "metros": [
+        "sarasota"
+      ],
+      "dataYear": "April 1, 2025 conditions",
+      "published": "April 1, 2025",
+      "format": "report"
+    },
+    {
+      "id": "zillow",
+      "cat": "Housing and affordability",
+      "cats": [
+        "Housing and affordability"
+      ],
+      "path": "Housing and affordability › Typical rents and values",
+      "title": "Zillow Housing Data",
+      "pub": "Zillow Research",
+      "type": "Industry / private housing dataset",
+      "url": "https://www.zillow.com/research/data/",
+      "covers": "Zillow offers downloadable information on typical rents, home values, and the income needed to rent or buy in different areas.",
+      "value": "I want actual dollar amounts alongside the broader cost comparisons. For a young family, I would want to know what housing with enough bedrooms could cost, rather than assume the cheapest apartment would meet my needs.",
+      "aud": "Families comparing housing options and people trying to connect local pay with housing costs would benefit.",
+      "lim": "The overall rent measure is not a quote for a particular home or bedroom count. I would match the dates and housing types where available, then check real listings in the neighborhoods I am considering.",
+      "geoLevel": "national",
+      "geoLabel": "Zillow metro and other area files — check the file’s geography before comparing",
+      "metros": [],
+      "dataYear": "as published in each Zillow file",
+      "published": "Zillow Research Data Center (living downloads)",
+      "format": "tool"
+    },
+    {
+      "id": "redfin",
+      "cat": "Housing and affordability",
+      "cats": [
+        "Housing and affordability"
+      ],
+      "path": "Housing and affordability › Recent market trackers",
+      "title": "Redfin Housing Data",
+      "pub": "Redfin",
+      "type": "Industry / private housing dataset",
+      "url": "https://www.redfin.com/news/data-center/",
+      "covers": "Redfin provides housing market trackers, downloadable data, and information about starter homes. Its datasets have different update schedules.",
+      "value": "I like having something that follows recent market changes. If I am comparing places where a young family could eventually buy a home, older averages alone would not give me enough information about what is happening now.",
+      "aud": "Families considering their first home and people comparing housing trends between areas would benefit.",
+      "lim": "A starter home is not automatically the right size or in the right location for every family. I would check the geography and reporting period, then research schools, commuting, and the full cost of owning a particular home.",
+      "geoLevel": "national",
+      "geoLabel": "Redfin Data Center series — geography and update schedule vary by dataset",
+      "metros": [],
+      "dataYear": "as published in each Redfin series",
+      "published": "Redfin Data Center (living downloads)",
+      "format": "tool"
+    },
+    {
+      "id": "bea",
+      "cat": "Cost of living",
+      "cats": [
+        "Cost of living"
+      ],
+      "path": "Cost of living › Metro price levels",
+      "title": "BEA Regional Price Parities",
+      "pub": "U.S. Bureau of Economic Analysis",
+      "type": "Federal statistical (derived index)",
+      "url": "https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area",
+      "covers": "This BEA source compares price levels across states and metro areas using Regional Price Parities. It also links to interactive tables and maps.",
+      "value": "A higher salary does not mean as much if everything around me costs more. I can use this alongside wage and housing data to compare how far an income might go when supporting a young family.",
+      "aud": "Families comparing job locations and people trying to understand differences in purchasing power would benefit.",
+      "lim": "The index is an overall comparison, not a family budget. It will not tell me exactly what childcare, insurance, or the housing I need would cost, so those expenses still need a closer look.",
+      "geoLevel": "national",
+      "geoLabel": "State and metro Regional Price Parities — MSA grain, 100 = U.S. average",
+      "metros": [],
+      "dataYear": "2023",
+      "published": "December 12, 2024",
+      "format": "federal table"
+    },
+    {
+      "id": "mit-lwc",
+      "cat": "Cost of living",
+      "cats": [
+        "Cost of living"
+      ],
+      "path": "Cost of living › Family living wage",
+      "title": "MIT Living Wage Calculator",
+      "pub": "Living Wage Institute via MIT Living Wage Calculator",
+      "type": "Research / derived budget",
+      "url": "https://livingwage.mit.edu/",
+      "covers": "This calculator estimates the income needed for basic expenses across different household types, including households with children. It provides county, metro, and state results.",
+      "value": "I think this fits my priorities well because housing is only part of raising a family. I can compare household situations with children and look at costs such as childcare and food instead of using a budget for a single person.",
+      "aud": "Young families comparing places to live or different working arrangements would benefit.",
+      "lim": "The estimates cover basic needs, not every expense or savings goal. I would select the household type that fits and adjust for actual childcare arrangements, debt, and other personal costs.",
+      "geoLevel": "national",
+      "geoLabel": "County, metro, and state results — pick the household type; not a single-person budget",
+      "metros": [],
+      "dataYear": "as shown on the calculator for the selected place",
+      "published": "MIT Living Wage Calculator (living tool)",
+      "format": "tool"
+    },
+    {
+      "id": "fbi",
+      "cat": "Safety and family life",
+      "cats": [
+        "Safety and family life"
+      ],
+      "path": "Safety and family life › Reported crime",
+      "title": "FBI Reported Crime Statistics",
+      "pub": "Federal Bureau of Investigation",
+      "type": "Federal statistical (agency-reported)",
+      "url": "https://www.fbi.gov/news/press-releases/fbi-releases-2024-reported-crimes-in-the-nation-statistics",
+      "covers": "This FBI release summarizes national crime statistics for 2024 and links to the Crime Data Explorer for more detailed information.",
+      "value": "Safety would matter a lot to me when deciding where to raise a young family. I wanted an official source to help check what I read online, because a few comments about a city would not be enough to judge an entire area.",
+      "aud": "Parents and other people beginning to research safety before a move would benefit.",
+      "lim": "The release is a national overview from an earlier year. I would need newer local data and neighborhood research, and reported crime figures do not capture everything that affects how safe a place feels.",
+      "geoLevel": "national",
+      "geoLabel": "National 2024 overview; local detail is in Crime Data Explorer — not a neighborhood score",
+      "metros": [],
+      "dataYear": "2024",
+      "published": "August 5, 2025",
+      "format": "article"
+    },
+    {
+      "id": "austin-survey",
+      "cat": "Safety and family life",
+      "cats": [
+        "Safety and family life"
+      ],
+      "path": "Safety and family life › Austin resident survey",
+      "title": "Austin Community Survey",
+      "pub": "City of Austin and ETC Institute",
+      "type": "City survey",
+      "url": "https://www.austintexas.gov/budget-excellence/community-survey",
+      "covers": "This survey asks Austin residents about city services, quality of life, and community priorities. The dashboard includes results from previous years as well.",
+      "value": "I want to know how residents feel about the place they live, especially when thinking about a young family. Their feedback gives me another way to look at everyday life beyond jobs and housing prices.",
+      "aud": "Families considering Austin who want to understand what residents appreciate and want improved would benefit.",
+      "lim": "The survey covers the city, not the whole metro, and it includes different kinds of households. I would still need to research the particular neighborhoods, schools, and family services that matter to me.",
+      "geoLevel": "city",
+      "geoLabel": "City of Austin — not the Austin–Round Rock–Georgetown MSA",
+      "metros": [
+        "austin"
+      ],
+      "dataYear": "2025 survey",
+      "published": "May 15, 2026",
+      "format": "survey"
+    },
+    {
+      "id": "raleigh-survey",
+      "cat": "Safety and family life",
+      "cats": [
+        "Safety and family life"
+      ],
+      "path": "Safety and family life › Raleigh resident survey",
+      "title": "Raleigh Community Survey",
+      "pub": "City of Raleigh and ETC Institute",
+      "type": "City survey",
+      "url": "https://raleighnc.gov/government/services/community-survey",
+      "covers": "This Raleigh survey covers resident satisfaction with quality of life, city services, and the city as a place to work. Housing, growth, and transportation are among the concerns residents identify.",
+      "value": "I like that it includes things people enjoy along with problems they want addressed. Those concerns matter to a young family because housing costs and time spent commuting can affect everyday life even when a job looks good.",
+      "aud": "Families considering Raleigh who want a broader picture of resident opinions would benefit.",
+      "lim": "The results are from the 2024 survey and cover Raleigh city limits. They do not describe every suburb or tell me which school or neighborhood would fit my needs.",
+      "geoLevel": "city",
+      "geoLabel": "City of Raleigh — not the whole Raleigh–Cary MSA or Durham",
+      "metros": [
+        "raleigh"
+      ],
+      "dataYear": "2024 survey",
+      "published": "May 6, 2025",
+      "format": "survey"
+    },
+    {
+      "id": "cbre",
+      "cat": "Overall tech-hub comparisons",
+      "cats": [
+        "Overall tech-hub comparisons"
+      ],
+      "path": "Overall tech-hub comparisons › Tech talent markets",
+      "title": "CBRE Scoring Tech Talent",
+      "pub": "CBRE Research",
+      "type": "Industry / commercial real-estate research",
+      "url": "https://www.cbre.com/insights/books/scoring-tech-talent-2026",
+      "covers": "This report compares North American tech talent markets and discusses employment trends, workforce size, and changes related to artificial intelligence.",
+      "value": "I want to know whether an area has enough technology opportunities before considering a move. For a young family, I think it is worth looking beyond one job offer and asking what other options might be available if that job did not work out.",
+      "aud": "People comparing tech markets while thinking about their family's future would benefit.",
+      "lim": "The report mainly supports business decisions, and a strong ranking does not mean a city is affordable for a new graduate. I would check U.S. market boundaries and compare its findings with family living costs.",
+      "geoLevel": "national",
+      "geoLabel": "North American talent markets in the 2026 book — confirm U.S. market boundaries",
+      "metros": [],
+      "dataYear": "2026 report coverage",
+      "published": "August 18, 2026",
+      "format": "book"
+    },
+    {
+      "id": "tampa-bay",
+      "cat": "Overall tech-hub comparisons",
+      "cats": [
+        "Overall tech-hub comparisons"
+      ],
+      "path": "Overall tech-hub comparisons › Tampa Bay region",
+      "title": "Tampa Bay Regional Competitiveness",
+      "pub": "Tampa Bay Partnership",
+      "type": "Regional economic report",
+      "url": "https://stateoftheregion.com/2026-highlights/",
+      "covers": "This report compares Tampa Bay with other communities using information about wages, housing, talent, transportation, and economic opportunity.",
+      "value": "Tampa is one of the Florida areas I want in my collection. I like that this source looks at several parts of living and working there, because growth alone would not tell me whether a young family could afford a good life in the area.",
+      "aud": "Families researching Tampa Bay and people comparing its economy with other regions would benefit.",
+      "lim": "The report uses an eight-county region that is larger than the Tampa MSA. I would keep those figures separate and check the data years before comparing them with my other metro sources.",
+      "geoLevel": "region",
+      "geoLabel": "Tampa Bay eight-county region — not the Tampa–St. Petersburg–Clearwater MSA",
+      "metros": [
+        "tampa"
+      ],
+      "dataYear": "2026 report",
+      "published": "2026 Regional Competitiveness Report",
+      "format": "report"
+    },
+    {
+      "id": "reddit",
+      "cat": "Community perspectives",
+      "cats": [
+        "Community perspectives"
+      ],
+      "path": "Community perspectives › Alternative tech cities",
+      "title": "Alternative Tech Cities Discussion",
+      "pub": "u/allllusernamestaken and commenters, Reddit r/SameGrassButGreener",
+      "type": "Community / opinion",
+      "url": "https://www.reddit.com/r/SameGrassButGreener/comments/1q0vtee/blist_tech_cities_that_are_actually_nice_places/",
+      "covers": "This discussion asks about alternatives to the biggest tech cities and includes opinions about jobs, climate, food, and access to nature.",
+      "value": "I wanted personal perspectives alongside the statistics. Some comments can give me ideas about places to research, especially when people discuss outdoor activities or the general feel of an area. I would then look more closely at whether those places fit a young family.",
+      "aud": "People exploring possible tech cities and deciding what to investigate next would benefit.",
+      "lim": "The discussion is not specifically about raising children. Comments reflect individual priorities, and I would need separate evidence about schools, childcare, safety, and job opportunities before using it to narrow down a move.",
+      "geoLevel": "national",
+      "geoLabel": "Opinion thread — not evidence for any one metro’s wages, schools, or crime",
+      "metros": [],
+      "dataYear": "thread as posted",
+      "published": "r/SameGrassButGreener",
+      "format": "community"
+    },
+    {
+      "id": "niche-pitt",
+      "cat": "Community perspectives",
+      "cats": [
+        "Community perspectives"
+      ],
+      "path": "Community perspectives › Pittsburgh reviews",
+      "title": "Pittsburgh Resident Reviews",
+      "pub": "Niche contributors",
+      "type": "Community / opinion",
+      "url": "https://www.niche.com/places-to-live/pittsburgh-allegheny-pa/reviews/",
+      "covers": "This page contains written reviews of Pittsburgh, including comments about neighborhoods, activities, weather, transportation, and housing affordability.",
+      "value": "I think hearing about daily life is useful when I have not lived somewhere myself. For a young family, I would pay more attention to what people say about their neighborhood and getting around than to entertainment aimed at singles.",
+      "aud": "Families beginning to research Pittsburgh and looking for questions to ask about particular areas would benefit.",
+      "lim": "The reviews are not a representative survey, and not every reviewer is a parent. I would check dates and locations and use separate sources to verify claims about schools, safety, and costs.",
+      "geoLevel": "city",
+      "geoLabel": "City of Pittsburgh / Allegheny County reviews — not applied to other metros",
+      "metros": [
+        "pittsburgh"
+      ],
+      "dataYear": "as dated on each review",
+      "published": "Niche Pittsburgh, PA reviews",
+      "format": "community"
+    },
+    {
+      "id": "reddit-six",
+      "cat": "Community perspectives",
+      "cats": [
+        "Community perspectives"
+      ],
+      "path": "Community perspectives › Six-city comparison thread",
+      "title": "Comparing Six Cities for a Tech Career",
+      "pub": "u/I-already-redd-it- and commenters, Reddit r/SameGrassButGreener",
+      "type": "Community / opinion",
+      "url": "https://www.reddit.com/r/SameGrassButGreener/comments/1qewuqf/looking_at_these_6_places_which_fits_the_criteria/",
+      "covers": "This discussion follows a 22-year-old comparing six cities based on technology opportunities, social life, and cost of living.",
+      "value": "The career and affordability tradeoffs still connect with my topic. I can use the discussion to notice questions about job access and housing, while recognizing that I am more interested in what a place offers a young family.",
+      "aud": "New graduates weighing different locations would benefit, especially those beginning to decide which factors matter most.",
+      "lim": "The poster focuses on dating, social life, and an individual budget, so this is a weaker fit for my priorities. It does not answer questions about schools or childcare, and commenters' financial and hiring claims need verification.",
+      "geoLevel": "national",
+      "geoLabel": "Opinion thread about six places — claims are not verified metro statistics",
+      "metros": [],
+      "dataYear": "January 2026",
+      "published": "January 2026",
+      "format": "community"
+    },
+    {
+      "id": "reddit-rdu",
+      "cat": "Community perspectives",
+      "cats": [
+        "Community perspectives"
+      ],
+      "path": "Community perspectives › Raleigh and Durham",
+      "title": "Raleigh and Durham Relocation Discussion",
+      "pub": "u/AdeptImplement898 and commenters, Reddit r/SameGrassButGreener",
+      "type": "Community / opinion",
+      "url": "https://www.reddit.com/r/SameGrassButGreener/comments/1qnmvvv/rdu_for_29m/",
+      "covers": "This thread discusses a possible job move to Raleigh or Durham, with replies about downtown living, activities, walkability, and suburban differences.",
+      "value": "I think the distinction between downtown and the suburbs is useful. Where I would live with a young family might be very different from where someone seeking a busy social scene would choose, even within the same general area.",
+      "aud": "People comparing parts of the Triangle and trying to understand how location changes daily life would benefit.",
+      "lim": "The original question focuses on dating and social life, making it less useful for my family priorities. I would need other sources for schools and childcare and would keep Raleigh and Durham tagged separately.",
+      "geoLevel": "city",
+      "geoLabel": "Raleigh and Durham discussed separately — not one MSA finding",
+      "metros": [
+        "raleigh"
+      ],
+      "dataYear": "January 2026",
+      "published": "January 2026",
+      "format": "community"
+    },
+    {
+      "id": "niche-tampa",
+      "cat": "Community perspectives",
+      "cats": [
+        "Community perspectives"
+      ],
+      "path": "Community perspectives › Tampa reviews",
+      "title": "Tampa Resident Reviews",
+      "pub": "Niche contributors",
+      "type": "Community / opinion",
+      "url": "https://www.niche.com/places-to-live/tampa-hillsborough-fl/reviews/",
+      "covers": "These Tampa reviews include residents' opinions about local activities, traffic, construction, and housing costs, along with other aspects of living in the area.",
+      "value": "Tampa is somewhere I want to understand beyond the housing averages. I would use these accounts to notice concerns about getting around and finding an affordable place to live, then look at how those issues could affect a young family.",
+      "aud": "Families beginning to explore Tampa and nearby neighborhoods would benefit.",
+      "lim": "The comments are self-selected and sometimes refer to the wider Tampa Bay area. A positive review does not establish that a neighborhood has the schools, safety, or childcare options I would want.",
+      "geoLevel": "city",
+      "geoLabel": "City of Tampa / Hillsborough County reviews — not the eight-county Tampa Bay region and not Tampa MSA tables",
+      "metros": [
+        "tampa"
+      ],
+      "dataYear": "as dated on each review",
+      "published": "Niche Tampa, FL reviews",
+      "format": "community"
+    },
+    {
+      "id": "niche-orlando",
+      "cat": "Community perspectives",
+      "cats": [
+        "Community perspectives"
+      ],
+      "path": "Community perspectives › Orlando reviews",
+      "title": "Orlando Resident Reviews",
+      "pub": "Niche contributors",
+      "type": "Community / opinion",
+      "url": "https://www.niche.com/places-to-live/orlando-orange-fl/reviews/",
+      "covers": "This page collects opinions about life in Orlando, including entertainment, community, commuting, and the cost of living.",
+      "value": "I want to understand Orlando as a place to raise a young family, not just somewhere to visit. Comments about everyday expenses and travel between places give me things to investigate before assuming that having plenty of attractions makes it a good fit.",
+      "aud": "Families considering Orlando who want personal perspectives alongside housing and wage data would benefit.",
+      "lim": "Reviewers have different priorities, and some claims may be inaccurate. I would verify information about transportation, jobs, and costs and separately research schools, childcare, parks, and the neighborhoods where I could actually afford to live.",
+      "geoLevel": "city",
+      "geoLabel": "City of Orlando / Orange County reviews — not Sarasota or Tampa MSA figures",
+      "metros": [
+        "orlando"
+      ],
+      "dataYear": "as dated on each review",
+      "published": "Niche Orlando, FL reviews",
+      "format": "community"
+    },
+    {
+      "id": "jchs",
+      "cat": "Housing and affordability",
+      "cats": [
+        "Housing and affordability"
+      ],
+      "path": "Housing and affordability › National housing research",
+      "title": "The State of the Nation’s Housing 2025",
+      "pub": "Joint Center for Housing Studies of Harvard University",
+      "type": "Academic research report",
+      "format": "academic report",
+      "url": "https://www.jchs.harvard.edu/state-nations-housing-2025",
+      "covers": "This Harvard research report looks at whether U.S. households can afford to buy or rent enough space, and how high prices, rents, insurance, and taxes are affecting families nationally.",
+      "value": "I want an academic picture of housing pressure, not just a listing site. If a young family is going to need bedrooms and a neighborhood they can stay in, I need to understand how tight the national market is before I compare individual tech hubs.",
+      "aud": "Students and parents who want a research-based overview of housing affordability before they start comparing metros would benefit.",
+      "lim": "The report is a national picture. It is not a quote for a specific tech-hub listing, and it does not tell me what a starter home would cost in Austin or Orlando. I am not putting its national figures on the metro cards.",
+      "geoLevel": "national",
+      "geoLabel": "National housing conditions — not a metro listing or a local survey",
+      "metros": [],
+      "dataYear": "2025 report",
+      "published": "2025",
+      "facts": [
+        {
+          "text": "US median existing single-family price $412,500 in 2024, about five times median household income versus a traditional three times",
+          "unit": "USD sale price; price-to-income ratio",
+          "geography": "United States",
+          "dataYear": "2024",
+          "published": "2025",
+          "note": "JCHS citing NAR. This is a national median, not a tech-hub listing."
+        },
+        {
+          "text": "Typical first-time-buyer payment on that median home $2,570 a month; income needed $126,700 at 31% debt-to-income",
+          "unit": "USD per month; USD annual income",
+          "geography": "United States, median-priced existing home",
+          "dataYear": "2024",
+          "published": "2025",
+          "note": "Assumes a 30-year fixed loan, 3.5% down, and 3% closing costs, as JCHS states."
+        },
+        {
+          "text": "Cash to close $26,800 at 3.5% down, or $95,000 at 20% down, on the median-priced home",
+          "unit": "USD cash",
+          "geography": "United States",
+          "dataYear": "2024",
+          "published": "2025"
+        },
+        {
+          "text": "US homeownership rate 65.6% in 2024, the first drop in eight years",
+          "unit": "percent of households",
+          "geography": "United States",
+          "dataYear": "2024",
+          "published": "2025"
+        },
+        {
+          "text": "20.3 million cost-burdened homeowners in 2023, 24% of owner households",
+          "unit": "households; percent",
+          "geography": "United States",
+          "dataYear": "2023",
+          "published": "2025",
+          "note": "Cost-burdened means more than 30% of income on housing and utilities."
+        },
+        {
+          "text": "Austin existing-home prices down 2.1% year over year; asking rents down 6.9%",
+          "unit": "percent change",
+          "geography": "Austin metro, as named in the JCHS 2025 report",
+          "dataYear": "year-over-year figures in the 2025 report",
+          "published": "2025",
+          "note": "Not a current listing price or a median rent for a specific bedroom count."
+        },
+        {
+          "text": "North Port existing-home prices down 4.2% year over year",
+          "unit": "percent change",
+          "geography": "North Port–Sarasota–Bradenton, as named in the JCHS 2025 report",
+          "dataYear": "year-over-year figures in the 2025 report",
+          "published": "2025"
+        },
+        {
+          "text": "Miami homeowners pay about $17.20 per $1,000 of coverage, more than $11,000 a year on a $644,000 median-priced home",
+          "unit": "USD per $1,000 of coverage; USD per year; USD home price",
+          "geography": "Miami metro, ICE Mortgage Monitor via JCHS",
+          "dataYear": "as reported in the 2025 JCHS report",
+          "published": "2025"
+        }
+      ]
+    },
+    {
+      "id": "brookings-podcast",
+      "cat": "Housing and affordability",
+      "cats": [
+        "Housing and affordability"
+      ],
+      "path": "Housing and affordability › Housing-cost podcast",
+      "title": "What Is Driving Up Housing Costs Across the US?",
+      "pub": "Brookings Podcast on Economic Activity; Joseph Gyourko and Ben Harris",
+      "type": "Academic / research podcast",
+      "format": "podcast",
+      "url": "https://www.brookings.edu/articles/what-is-driving-up-housing-costs-across-the-us/",
+      "covers": "This Brookings podcast talks with economist Joseph Gyourko about what is driving housing costs up across the United States, including supply and regulation. The conversation mentions several metros, among them Atlanta, Miami, and Phoenix.",
+      "value": "I like hearing researchers explain why even Sun Belt cities that used to feel affordable are getting expensive. That helps me think about whether a tech job in a growing metro would still leave room for a young family, instead of assuming a lower regional price index is enough.",
+      "aud": "People comparing tech-hub metros who want an academic conversation about housing supply, not only a price index, would benefit.",
+      "lim": "The episode is not a family budget and not starting pay. Spoken long-run figures sit on this page as labeled history. I am not treating them as current asking rents or as metro KPI cards.",
+      "geoLevel": "national",
+      "geoLabel": "National conversation; Atlanta, Miami, Phoenix, and Tampa come up as examples — not local survey results",
+      "metros": [],
+      "dataYear": "2025",
+      "published": "May 15, 2025",
+      "facts": [
+        {
+          "text": "Since about 2000, Miami, Tampa, and Phoenix grew more in real, constant-quality home prices than New York; Tampa was about fifth and Phoenix about ninth among the 20-city index",
+          "unit": "real constant-quality home-price growth; rank in a 20-city index",
+          "geography": "Case-Shiller-style 20-city set, as discussed in the May 15, 2025 podcast",
+          "dataYear": "about 2000 through the mid-2020s",
+          "published": "May 15, 2025",
+          "note": "Spoken long-run history, not a 2025 asking price."
+        },
+        {
+          "text": "Spoken real price growth since 2000: Miami 137%, Dallas 57%, Atlanta 32%",
+          "unit": "percent real constant-quality price change",
+          "geography": "Miami, Dallas, and Atlanta metros as named in the podcast",
+          "dataYear": "about 2000 through the mid-2020s",
+          "published": "May 15, 2025",
+          "note": "Rounded figures from the conversation, not current listing medians."
+        },
+        {
+          "text": "In Atlanta, the share of new units in low-density, high-price (mostly suburban) tracts fell from about 90% in the 1970s to about 40% in the 2010s",
+          "unit": "percent of new housing units",
+          "geography": "Atlanta metro",
+          "dataYear": "1970s versus 2010–2020",
+          "published": "May 15, 2025"
+        }
+      ]
+    }
+  ]
+}
