@@ -22,6 +22,7 @@ export function sourceSearchHaystack(source: Source): string {
     source.title,
     source.pub,
     source.type,
+    source.format,
     source.covers,
     source.value,
     source.aud,

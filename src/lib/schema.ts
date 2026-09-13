@@ -73,6 +73,7 @@ export const sourceSchema = z.object({
   title: z.string().min(1),
   pub: z.string().min(1),
   type: z.string().min(1),
+  format: z.string().min(1),
   url: z.string().url(),
   covers: z.string().min(1),
   value: z.string().min(1),

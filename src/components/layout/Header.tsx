@@ -6,7 +6,7 @@ const NAV: { screen: Screen; label: string }[] = [
   { screen: "map", label: "Map" },
   { screen: "library", label: "Source library" },
   { screen: "compare", label: "Compare" },
-  { screen: "about", label: "About & method" },
+  { screen: "about", label: "About" },
 ];
 
 export function Header() {
@@ -18,7 +18,7 @@ export function Header() {
         <div className="brandmark" />
         <div>
           <div className="t">Tech-Hub Housing Markets</div>
-          <div className="s">Live and raise a young family · CMPA 4301 · John Hazuka</div>
+          <div className="s">CMPA 4301 · John Hazuka</div>
         </div>
       </div>
       <nav>

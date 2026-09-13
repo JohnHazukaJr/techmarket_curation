@@ -8,9 +8,14 @@ export function CategoryGrid() {
   const [catFilter, setCatFilter] = useState("all");
   const [metroFilter, setMetroFilter] = useState("all");
   const [typeFilter, setTypeFilter] = useState("all");
+  const [formatFilter, setFormatFilter] = useState("all");
 
   const types = useMemo(
     () => Array.from(new Set(sources.map((s) => s.type))).sort(),
+    [sources],
+  );
+  const formats = useMemo(
+    () => Array.from(new Set(sources.map((s) => s.format))).sort(),
     [sources],
   );
 
@@ -19,13 +24,14 @@ export function CategoryGrid() {
     return sources.filter((s) => {
       if (q && !sourceSearchHaystack(s).includes(q)) return false;
       if (typeFilter !== "all" && s.type !== typeFilter) return false;
+      if (formatFilter !== "all" && s.format !== formatFilter) return false;
       if (metroFilter === "national" && !isNationalSource(s)) return false;
       if (metroFilter !== "all" && metroFilter !== "national" && !sourceApplies(s, metroFilter)) {
         return false;
       }
       return true;
     });
-  }, [metroFilter, query, sources, typeFilter]);
+  }, [formatFilter, metroFilter, query, sources, typeFilter]);
 
   const shownCats = catFilter === "all" ? categories : categories.filter((c) => c === catFilter);
 
@@ -76,6 +82,17 @@ export function CategoryGrid() {
               ))}
             </select>
           </label>
+          <label>
+            <span className="mono">Format</span>
+            <select value={formatFilter} onChange={(e) => setFormatFilter(e.target.value)}>
+              <option value="all">All formats</option>
+              {formats.map((f) => (
+                <option key={f} value={f}>
+                  {f}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <div className="mono">
           {visible.length} of {sources.length} sources
@@ -85,7 +102,12 @@ export function CategoryGrid() {
         {shownCats.map((cat) => {
           const items = visible.filter((s) => sourceInCategory(s, cat));
           const openSlots = slots[cat] ?? [];
-          const filtering = Boolean(query.trim()) || catFilter !== "all" || metroFilter !== "all" || typeFilter !== "all";
+          const filtering =
+            Boolean(query.trim()) ||
+            catFilter !== "all" ||
+            metroFilter !== "all" ||
+            typeFilter !== "all" ||
+            formatFilter !== "all";
           if (filtering && items.length === 0 && !openSlots.length) return null;
           return (
             <div className="cat glass" key={cat}>
@@ -113,6 +135,7 @@ export function CategoryGrid() {
                     {s.type}
                   </span>
                   <span className="tags">
+                    <span className="tag">{s.format}</span>
                     <span className="tag" title={s.geoLabel}>
                       {geoBadge(s)}
                     </span>

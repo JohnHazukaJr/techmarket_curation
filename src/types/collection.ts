@@ -93,6 +93,7 @@ export interface Source {
   title: string;
   pub: string;
   type: string;
+  format: string;
   url: string;
   covers: string;
   value: string;

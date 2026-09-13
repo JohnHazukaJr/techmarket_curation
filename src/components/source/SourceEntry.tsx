@@ -16,6 +16,7 @@ export function SourceEntry() {
         <h1 id="se-title">{s.title}</h1>
         <div className="tags" id="se-tags">
           <span className="tag">{s.type}</span>
+          <span className="tag">{s.format}</span>
           <span className="tag" title={s.geoLabel}>
             {geoBadge(s)}
           </span>
@@ -37,22 +38,26 @@ export function SourceEntry() {
           <h3>Limitations</h3>
           <p id="se-lim">{s.lim}</p>
         </div>
-        {s.facts?.map((fact) => (
-          <div className="annblock" key={fact.text}>
-            <h3>Figure stated in the collection</h3>
-            <p>
-              {fact.text}.{" "}
-              <CiteTip
-                unit={fact.unit}
-                geography={fact.geography}
-                dataYear={fact.dataYear}
-                published={fact.published}
-                href={s.url}
-              />
-            </p>
-            {fact.note ? <p>{fact.note}</p> : null}
+        {s.facts?.length ? (
+          <div className="annblock">
+            <h3>Figures stated in the collection</h3>
+            {s.facts.map((fact) => (
+              <div key={fact.text}>
+                <p>
+                  {fact.text}.{" "}
+                  <CiteTip
+                    unit={fact.unit}
+                    geography={fact.geography}
+                    dataYear={fact.dataYear}
+                    published={fact.published}
+                    href={s.url}
+                  />
+                </p>
+                {fact.note ? <p>{fact.note}</p> : null}
+              </div>
+            ))}
           </div>
-        ))}
+        ) : null}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", paddingTop: 6 }}>
           <a className="btn" id="se-url" href={s.url} target="_blank" rel="noopener">
             Visit source ↗
@@ -74,6 +79,10 @@ export function SourceEntry() {
         <div className="kv">
           <i>Source type</i>
           <b id="se-type">{s.type}</b>
+        </div>
+        <div className="kv">
+          <i>Format</i>
+          <b id="se-format">{s.format}</b>
         </div>
         <div className="kv">
           <i>Geography</i>

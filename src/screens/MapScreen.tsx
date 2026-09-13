@@ -10,18 +10,15 @@ export function MapScreen() {
       <div className="intro glass">
         <div>
           <div className="mono" style={{ marginBottom: 10 }}>
-            Scope &amp; how to use this collection
+            A curated collection
           </div>
           <h1>Where can a new tech grad actually afford to live and eventually raise a young family?</h1>
           <p>
-            I am gathering {sources.length} annotated sources on {metros.length} U.S. metros so I can
-            compare the same family questions city to city: housing space, starting pay, jobs,
-            everyday prices, safety, schools, childcare, parks, and commuting. Nightlife and dating
-            are not the point. Start on the map, open a metro to read the sources tagged to it, or go
-            to the library for the full notes. Metro names follow the OMB definitions the federal
-            tables use. City surveys stay on the city. The Tampa Bay report is an eight-county
-            region, not the Tampa MSA. Numbers come from the 20 sources; if a source does not give
-            a comparable metro figure, that cell stays blank.
+            I gathered {sources.length} annotated sources on {metros.length} OMB metros so I can
+            compare housing space, starting pay, jobs, prices, safety, schools, childcare, parks,
+            and commuting. Click a state, then a metro, for place-specific notes. The library has
+            every annotation. Compare three metros on the BEA price and income figures we actually
+            have.
           </p>
         </div>
         <div className="introfacts">
@@ -30,16 +27,10 @@ export function MapScreen() {
             <span>Live here — and raise a young family</span>
           </div>
           <div className="fact">
-            <b>Unit of analysis</b>
-            <span>MSA, unless a badge says city or region</span>
-          </div>
-          <div className="fact">
-            <b>Every source annotated</b>
-            <span>Covers · Value · Audience · Limits</span>
-          </div>
-          <div className="fact">
-            <b>Every figure cited</b>
-            <span>Unit, place, data year, published, link</span>
+            <b>The collection</b>
+            <span>
+              {sources.length} sources · {metros.length} metros
+            </span>
           </div>
         </div>
       </div>
@@ -52,9 +43,7 @@ export function MapScreen() {
         <MetroRail />
       </div>
       <div className="note">
-        Shaded states contain at least one tracked metro · mapped BEA figures are 2023 data released
-        December 12, 2024 · if a source does not give a comparable metro figure, that factor stays
-        awaiting pull
+        Shaded states have a tracked metro. Prices are BEA 2023, released Dec 12, 2024.
       </div>
     </section>
   );

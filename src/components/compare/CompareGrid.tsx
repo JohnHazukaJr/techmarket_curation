@@ -27,7 +27,7 @@ export function CompareGrid() {
           </select>
         </div>
       ))}
-      {METRICS.map((x) => {
+      {METRICS.filter((x) => picks.some((m) => live(m, x))).map((x) => {
         const vals = picks.map((m) => (live(m, x) ? val(m, x.k) : null));
         const liveVals = vals.filter((v): v is number => v !== null);
         const canBest = liveVals.length >= 2;
@@ -37,29 +37,21 @@ export function CompareGrid() {
             <div className="cmplabel">{x.label}</div>
             {picks.map((m, i) => {
               const n = vals[i];
-              if (n === null) {
-                return (
-                  <div className="cmpcell pending" key={`${x.k}-${m.id}`}>
-                    <span className="v">—</span>
-                    <span className="mono" style={{ textTransform: "none", letterSpacing: 0 }}>
-                      awaiting pull
-                    </span>
-                  </div>
-                );
-              }
+              if (n === null) return <div className="cmpcell" key={`${x.k}-${m.id}`} />;
               return (
                 <div
                   className={`cmpcell glass${best !== null && n === best ? " best" : ""}`}
                   key={`${x.k}-${m.id}`}
                 >
                   <span className="v">{x.fmt(n)}</span>
-                  {best !== null && n === best ? <span className="flag">best of live</span> : null}
+                  {best !== null && n === best ? <span className="flag">best of 3</span> : null}
                   <CiteTip
                     unit={x.unit}
                     geography={m.name}
                     dataYear={x.dataYear}
                     published={x.published}
                     href={x.url}
+                    short={`${x.src.toUpperCase()} · ${x.dataYear} · ${x.published}`}
                   />
                 </div>
               );
