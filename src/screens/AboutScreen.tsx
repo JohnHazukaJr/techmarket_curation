@@ -17,8 +17,9 @@ export function AboutScreen() {
             Where can a new tech grad actually afford to live and eventually raise a young family? I
             started from housing space, starting pay, jobs, safety, schools, childcare, parks, and
             commuting. This site holds {sources.length} annotated sources across {categories.length}{" "}
-            topics and {metros.length} metros. Numbers come from those sources. If a source does not
-            give a comparable metro figure, I leave the cell blank.
+            topics and {metros.length} metros. The cards show BEA figures and labeled facts from
+            those sources. If a source does not give a comparable metro figure, I leave the cell
+            blank.
           </p>
           <p>
             How to use this site: start on the map, open a metro for place-specific notes, read

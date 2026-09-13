@@ -5,5 +5,3 @@
 .step .n{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.1em}
 .step b{font-size:13.5px}
 .step p{font-size:12.5px;line-height:1.5}
-.stackrow{display:flex;gap:8px;flex-wrap:wrap}
-.pill{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:7px 11px;border-radius:99px;border:1px solid var(--edge);background:var(--glass-2);color:var(--ink-2)}

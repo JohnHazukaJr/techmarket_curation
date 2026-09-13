@@ -8,4 +8,3 @@
 .cmpcell .d{font-size:11.5px;color:var(--ink-3);line-height:1.35}
 .cmpcell.best{outline:1.5px solid var(--accent);outline-offset:-1.5px}
 .cmpcell .flag{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.cmprow{display:contents}

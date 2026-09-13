@@ -12,12 +12,7 @@
 .srcrow .ttl{font-size:13.5px;font-weight:600;cursor:pointer;background:none;border:0;padding:0;text-align:left;font-family:var(--font);color:var(--ink)}
 .srcrow .ttl:hover{color:var(--accent)}
 .srcrow p{margin:0;font-size:12.5px;line-height:1.55;color:var(--ink-2)}
-.kpi.pending,.cmpcell.pending{box-shadow:none;background:repeating-linear-gradient(45deg,rgba(255,255,255,.5) 0 6px,rgba(255,255,255,.14) 6px 12px);border:1px dashed color-mix(in oklch,var(--ink-3),transparent 45%);border-radius:var(--r)}
-.kpi.pending .v,.cmpcell.pending .v{font-size:15px;color:var(--ink-3);font-family:var(--font);font-weight:600;letter-spacing:0}
-.kpi.pending .d{color:var(--ink-3)}
 .prov-row{display:grid;gap:3px;padding:0 0 9px;border-bottom:1px solid var(--hair)}
 .prov-row i{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .prov-row b{font-size:12.5px;font-weight:600;line-height:1.4;color:var(--ink)}
-.prov-row.todo{padding:9px 11px;border:1px dashed color-mix(in oklch,var(--ink-3),transparent 45%);border-radius:calc(var(--r) - 10px);background:repeating-linear-gradient(45deg,rgba(255,255,255,.5) 0 6px,rgba(255,255,255,.14) 6px 12px)}
-.prov-row.todo b{color:var(--ink-2)}
 .prov-stack{display:grid;gap:10px}

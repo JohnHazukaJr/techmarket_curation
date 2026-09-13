@@ -1,4 +1,15 @@
-import type { Source } from "../types/collection";
+import type { Source, SourceFact } from "../types/collection";
+
+const PLACE_ALIASES: Record<string, string[]> = {
+  austin: ["austin"],
+  sarasota: ["sarasota", "north port"],
+  miami: ["miami"],
+  atlanta: ["atlanta"],
+  phoenix: ["phoenix"],
+  tampa: ["tampa"],
+};
+
+const MSA_COMPARABLE_FORMATS = new Set(["federal table", "tool"]);
 
 export function sourceCategories(source: Source): string[] {
   return source.cats.length ? source.cats : [source.cat];
@@ -35,14 +46,40 @@ export function sourceSearchHaystack(source: Source): string {
     .toLowerCase();
 }
 
+export function factNamesPlace(fact: SourceFact, metroId: string): boolean {
+  const aliases = PLACE_ALIASES[metroId];
+  if (!aliases) return false;
+  const hay = `${fact.geography} ${fact.text}`.toLowerCase();
+  return aliases.some((alias) => hay.includes(alias));
+}
+
+export function namedFactsForMetro(
+  sources: Source[],
+  metroId: string,
+): { source: Source; fact: SourceFact }[] {
+  return sources
+    .filter((source) => isNationalSource(source))
+    .flatMap((source) =>
+      (source.facts ?? [])
+        .filter((fact) => factNamesPlace(fact, metroId))
+        .map((fact) => ({ source, fact })),
+    );
+}
+
 export function geoBadge(source: Source): string {
-  if (source.geoLevel === "national") return "National / MSA-comparable";
+  if (source.geoLevel === "national") {
+    return MSA_COMPARABLE_FORMATS.has(source.format) ? "National / MSA-comparable" : "National";
+  }
   if (source.geoLevel === "city") return "City";
   if (source.geoLevel === "region") return "Region · not MSA";
   return "MSA";
 }
 
 export function metrosLabel(source: Source): string {
-  if (isNationalSource(source)) return "National / all comparable metros";
+  if (isNationalSource(source)) {
+    return MSA_COMPARABLE_FORMATS.has(source.format)
+      ? "National / all comparable metros"
+      : "National";
+  }
   return source.metros.map((id) => `#${id}`).join(", ");
 }

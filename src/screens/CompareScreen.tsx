@@ -8,14 +8,17 @@ export function CompareScreen() {
       <div className="detailhead glass">
         <div>
           <div className="mono">Compare</div>
-          <h1>Three metros, same measures</h1>
+          <h1>Three metros, BEA measures</h1>
         </div>
         <button type="button" className="btn ghost" onClick={() => go("map")}>
           ← Back to map
         </button>
       </div>
       <CompareGrid />
-      <div className="note">Outlined cell is the better of the three that have a number.</div>
+      <div className="note">
+        Outlined cell is the higher or lower of the three that have a number, depending on the row.
+        Real personal income is the metro total, so a larger economy wins that row.
+      </div>
     </section>
   );
 }

@@ -8,13 +8,10 @@ export function LibraryScreen() {
       <div className="intro glass" style={{ gridTemplateColumns: "minmax(0,1fr)" }}>
         <div>
           <div className="mono" style={{ marginBottom: 10 }}>
-            {sources.length} sources
+            Source library
           </div>
           <h1>{sources.length} annotated sources</h1>
-          <p>
-            Search or filter by topic, metro, publisher, or format — tables, tools, articles,
-            reports, surveys, a book, community threads, an academic report, and a podcast.
-          </p>
+          <p>Search or filter by topic, metro, publisher, or format.</p>
         </div>
       </div>
       <CategoryGrid />

@@ -22,17 +22,25 @@ export function Header() {
         </div>
       </div>
       <nav>
-        {NAV.map((item) => (
-          <button
-            key={item.screen}
-            type="button"
-            data-go={item.screen}
-            aria-current={route.screen === item.screen ? "page" : undefined}
-            onClick={() => go(item.screen)}
-          >
-            {item.label}
-          </button>
-        ))}
+        {NAV.map((item) => {
+          const current =
+            item.screen === "map"
+              ? route.screen === "map" || route.screen === "metro"
+              : item.screen === "library"
+                ? route.screen === "library" || route.screen === "source"
+                : route.screen === item.screen;
+          return (
+            <button
+              key={item.screen}
+              type="button"
+              data-go={item.screen}
+              aria-current={current ? "page" : undefined}
+              onClick={() => go(item.screen)}
+            >
+              {item.label}
+            </button>
+          );
+        })}
       </nav>
       <DirectionToggle />
     </header>

@@ -2,9 +2,15 @@ import { CiteTip } from "../components/cite/CiteTip";
 import { KpiGrid } from "../components/metro/KpiGrid";
 import { ProvenancePanel } from "../components/metro/ProvenancePanel";
 import { STATENAME } from "../data/states";
-import { geoBadge, isNationalSource, sourceApplies, sourceInCategory } from "../lib/sources";
+import {
+  geoBadge,
+  isNationalSource,
+  namedFactsForMetro,
+  sourceApplies,
+  sourceInCategory,
+} from "../lib/sources";
 import { useCollection } from "../state/CollectionContext";
-import type { Source } from "../types/collection";
+import type { Source, SourceFact } from "../types/collection";
 
 const SECTIONS: { title: string; cats: string[] }[] = [
   { title: "Tech jobs and wages", cats: ["Jobs and salaries"] },
@@ -16,23 +22,30 @@ const SECTIONS: { title: string; cats: string[] }[] = [
 ];
 
 const PLACE_NOTES: Record<string, string> = {
-  orlando:
-    "The Orlando article title “nears 80,000” is a 2025 projection that uses 2024 data, not a 2024 count.",
   tampa:
-    "The Tampa Bay Partnership report is an eight-county region, not the Tampa MSA. Niche reviews are the City of Tampa. The Brookings podcast (May 15, 2025) places Tampa among the faster real home-price gains since 2000 in a 20-city index — long-run history, not a current listing.",
-  austin:
-    "The Austin community survey covers city limits, not the Austin MSA. JCHS 2025 reports Austin existing-home prices down 2.1% year over year and asking rents down 6.9% — not a current listing or a bedroom-specific rent.",
+    "The Tampa Bay Partnership report is an eight-county region, not the Tampa MSA. Niche reviews are the City of Tampa.",
+  austin: "The Austin community survey covers city limits, not the Austin MSA.",
   raleigh:
     "The Raleigh community survey covers city limits. The RDU thread treats Raleigh and Durham as separate cities, not one MSA.",
-  sarasota:
-    "The HUD housing analysis is North Port–Sarasota–Bradenton only. JCHS 2025 reports North Port existing-home prices down 4.2% year over year.",
-  miami:
-    "JCHS 2025, citing ICE Mortgage Monitor, puts Miami insurance at about $17.20 per $1,000 of coverage, more than $11,000 a year on a $644,000 median-priced home. The Brookings podcast cites about 137% real price growth since 2000. Neither figure is a current asking rent.",
-  atlanta:
-    "The Brookings podcast (May 15, 2025) cites about 32% real home-price growth in Atlanta since 2000, and a drop in the suburban share of new units from about 90% in the 1970s to about 40% in the 2010s.",
-  phoenix:
-    "The Brookings podcast (May 15, 2025) places Phoenix among the faster real home-price gains since 2000 in a 20-city index (about ninth). That is long-run history, not a current listing.",
+  sarasota: "The HUD housing analysis is North Port–Sarasota–Bradenton only.",
 };
+
+function FactLine({ source, fact }: { source: Source; fact: SourceFact }) {
+  return (
+    <p>
+      <strong>{fact.text}. </strong>
+      <CiteTip
+        unit={fact.unit}
+        geography={fact.geography}
+        dataYear={fact.dataYear}
+        published={fact.published}
+        href={source.url}
+        short={`${fact.dataYear} · ${fact.published}`}
+      />
+      {fact.note ? ` ${fact.note}` : null}
+    </p>
+  );
+}
 
 function PlaceSource({
   source,
@@ -56,18 +69,7 @@ function PlaceSource({
       ) : null}
       <p>{source.covers}</p>
       {source.facts?.map((fact) => (
-        <p key={fact.text}>
-          <strong>{fact.text}. </strong>
-          <CiteTip
-            unit={fact.unit}
-            geography={fact.geography}
-            dataYear={fact.dataYear}
-            published={fact.published}
-            href={source.url}
-            short={`${fact.dataYear} · ${fact.published}`}
-          />
-          {fact.note ? ` ${fact.note}` : null}
-        </p>
+        <FactLine key={fact.text} source={source} fact={fact} />
       ))}
     </div>
   );
@@ -80,6 +82,7 @@ export function MetroScreen() {
     ? sources.filter((s) => sourceApplies(s, metro.id) && !isNationalSource(s))
     : [];
   const national = metro ? sources.filter((s) => isNationalSource(s)) : [];
+  const namedFacts = metro ? namedFactsForMetro(sources, metro.id) : [];
   const note = metro ? PLACE_NOTES[metro.id] : undefined;
 
   return (
@@ -92,7 +95,9 @@ export function MetroScreen() {
           <h1 id="md-name">{metro?.name ?? "Metro"}</h1>
           {metro ? (
             <div className="tags" id="md-tags" style={{ marginTop: 10 }}>
-              <span className="tag">{local.length + national.length} sources</span>
+              <span className="tag">
+                {local.length} place-specific {local.length === 1 ? "source" : "sources"}
+              </span>
             </div>
           ) : null}
         </div>
@@ -101,14 +106,14 @@ export function MetroScreen() {
             ← Back to map
           </button>
           <button type="button" className="btn" onClick={() => go("compare")}>
-            Add to comparison
+            Compare
           </button>
         </div>
       </div>
       {metro ? <KpiGrid metro={metro} /> : null}
       <div className="twocol">
         <div className="panel glass">
-          <h2>About this place</h2>
+          <h2>Place-specific sources</h2>
           <div id="md-sources">
             {SECTIONS.map((section) => {
               const items = local.filter((s) => section.cats.some((cat) => sourceInCategory(s, cat)));
@@ -126,15 +131,30 @@ export function MetroScreen() {
             })}
             {local.length === 0 ? (
               <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--ink-2)" }}>
-                No place-specific source in the collection. National tables are listed at right.
+                No place-specific source in the collection. National sources are listed at right.
               </p>
             ) : null}
           </div>
         </div>
         <div style={{ display: "grid", gap: 18 }}>
           <ProvenancePanel />
+          {namedFacts.length ? (
+            <div className="panel glass">
+              <h2>Figures named for this place</h2>
+              <div>
+                {namedFacts.map(({ source, fact }) => (
+                  <div className="srcrow" key={`${source.id}-${fact.text}`}>
+                    <button type="button" className="ttl" onClick={() => openSource(source.id)}>
+                      {source.title}
+                    </button>
+                    <FactLine source={source} fact={fact} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
           <div className="panel glass">
-            <h2>National tables</h2>
+            <h2>National sources</h2>
             <div>
               {national.map((s) => (
                 <div className="srcrow" key={s.id}>
@@ -147,7 +167,7 @@ export function MetroScreen() {
           </div>
           {note ? (
             <div className="panel glass">
-              <h2>A note on this place</h2>
+              <h2>A note on geography</h2>
               <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6, color: "var(--ink-2)" }}>{note}</p>
             </div>
           ) : null}

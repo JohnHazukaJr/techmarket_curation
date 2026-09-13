@@ -2,10 +2,12 @@ import { Fragment } from "react";
 import { CiteTip } from "../cite/CiteTip";
 import { METRICS, live, val } from "../../data/metrics";
 import { useCollection } from "../../state/CollectionContext";
+import type { Metro } from "../../types/collection";
 
 export function CompareGrid() {
   const { metros, compareIds, setCompareId } = useCollection();
-  const picks = compareIds.map((id) => metros.find((m) => m.id === id) ?? metros[0]);
+  const picks = compareIds.map((id) => metros.find((m) => m.id === id) ?? null);
+  const defined = picks.filter((m): m is Metro => m !== null);
 
   return (
     <div className="cmpgrid" id="cmpgrid">
@@ -13,12 +15,14 @@ export function CompareGrid() {
       {picks.map((m, i) => (
         <div className="cmphead glass" key={`head-${i}`}>
           <span className="mono">Column {i + 1}</span>
-          <span className="nm">{m.name}</span>
+          <span className="nm">{m?.name ?? "Choose a metro"}</span>
           <select
             data-col={i}
-            value={m.id}
+            value={m?.id ?? ""}
+            aria-label={`Column ${i + 1} metro`}
             onChange={(e) => setCompareId(i, e.target.value)}
           >
+            {!m ? <option value="">Select a metro</option> : null}
             {metros.map((x) => (
               <option key={x.id} value={x.id}>
                 {x.name}
@@ -27,24 +31,25 @@ export function CompareGrid() {
           </select>
         </div>
       ))}
-      {METRICS.filter((x) => picks.some((m) => live(m, x))).map((x) => {
-        const vals = picks.map((m) => (live(m, x) ? val(m, x.k) : null));
+      {METRICS.filter((x) => defined.some((m) => live(m, x))).map((x) => {
+        const vals = picks.map((m) => (m && live(m, x) ? val(m, x.k) : null));
         const liveVals = vals.filter((v): v is number => v !== null);
-        const canBest = liveVals.length >= 2;
-        const best = canBest ? (x.hi ? Math.max(...liveVals) : Math.min(...liveVals)) : null;
+        const canMark = liveVals.length >= 2;
+        const marked = canMark ? (x.hi ? Math.max(...liveVals) : Math.min(...liveVals)) : null;
+        const flag = x.hi ? "higher" : "lower";
         return (
           <Fragment key={x.k}>
             <div className="cmplabel">{x.label}</div>
             {picks.map((m, i) => {
               const n = vals[i];
-              if (n === null) return <div className="cmpcell" key={`${x.k}-${m.id}`} />;
+              if (!m || n === null) return <div className="cmpcell" key={`${x.k}-${i}`} />;
               return (
                 <div
-                  className={`cmpcell glass${best !== null && n === best ? " best" : ""}`}
-                  key={`${x.k}-${m.id}`}
+                  className={`cmpcell glass${marked !== null && n === marked ? " best" : ""}`}
+                  key={`${x.k}-${m.id}-${i}`}
                 >
                   <span className="v">{x.fmt(n)}</span>
-                  {best !== null && n === best ? <span className="flag">best of 3</span> : null}
+                  {marked !== null && n === marked ? <span className="flag">{flag}</span> : null}
                   <CiteTip
                     unit={x.unit}
                     geography={m.name}

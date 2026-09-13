@@ -29,7 +29,7 @@ export function MetricChips() {
             {current.label}
           </span>
           <span className="ramp" />
-          <span className="mono">higher</span>
+          <span className="mono">{current.hi ? "higher" : "lower"}</span>
         </div>
         <BackToUsButton />
       </div>

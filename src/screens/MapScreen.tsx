@@ -1,10 +1,12 @@
 import { MetricChips } from "../components/map/MetricChips";
 import { MetroRail } from "../components/map/MetroRail";
 import { UsMap } from "../components/map/UsMap";
+import { metricByKey } from "../data/metrics";
 import { useCollection } from "../state/CollectionContext";
 
 export function MapScreen() {
-  const { sources, metros } = useCollection();
+  const { sources, metros, metric } = useCollection();
+  const current = metricByKey(metric);
   return (
     <section className="screen" id="s-map">
       <div className="intro glass">
@@ -14,11 +16,11 @@ export function MapScreen() {
           </div>
           <h1>Where can a new tech grad actually afford to live and eventually raise a young family?</h1>
           <p>
-            I gathered {sources.length} annotated sources on {metros.length} OMB metros so I can
-            compare housing space, starting pay, jobs, prices, safety, schools, childcare, parks,
-            and commuting. Click a state, then a metro, for place-specific notes. The library has
-            every annotation. Compare three metros on the BEA price and income figures we actually
-            have.
+            I gathered {sources.length} annotated sources on {metros.length} OMB metros. I started
+            from housing space, starting pay, jobs, safety, schools, childcare, parks, and
+            commuting. The cards and compare use the BEA price and income figures we have, plus
+            labeled facts on the source pages. Click a state, then a metro, for place-specific
+            notes. The library has every annotation.
           </p>
         </div>
         <div className="introfacts">
@@ -43,7 +45,8 @@ export function MapScreen() {
         <MetroRail />
       </div>
       <div className="note">
-        Shaded states have a tracked metro. Prices are BEA 2023, released Dec 12, 2024.
+        Shaded states have a tracked metro. {current.label}: BEA {current.dataYear}, released{" "}
+        {current.published}.
       </div>
     </section>
   );
