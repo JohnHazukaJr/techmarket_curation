@@ -1,0 +1,124 @@
+{
+  "categories": [
+    "Technology Jobs & Salaries",
+    "Housing & Affordability",
+    "Cost of Living",
+    "Safety & Quality of Life",
+    "Overall Tech-Hub Comparisons",
+    "Community Perspectives"
+  ],
+  "slots": {
+    "Technology Jobs & Salaries": [
+      "slot: state tech-council workforce report",
+      "slot: remote-vs-onsite posting mix"
+    ],
+    "Housing & Affordability": ["slot: FHFA house price index by MSA"],
+    "Cost of Living": ["slot: utilities + transit cost dataset"],
+    "Safety & Quality of Life": [
+      "slot: EPA air quality by metro",
+      "slot: county health rankings"
+    ],
+    "Overall Tech-Hub Comparisons": ["slot: CBRE or Brookings tech-talent report"],
+    "Community Perspectives": ["slot: local subreddit AMA or city-forum thread"]
+  },
+  "sources": [
+    {
+      "id": "bls",
+      "cat": "Technology Jobs & Salaries",
+      "path": "Technology Jobs & Salaries › Employment & Wages",
+      "title": "Metropolitan Occupational Employment and Wage Estimates",
+      "pub": "U.S. Bureau of Labor Statistics",
+      "type": "Federal statistical (primary)",
+      "url": "https://www.bls.gov/oes/current/oessrcma.htm",
+      "covers": "Employment counts and wage estimates for occupations across U.S. metro areas, including computer and technology occupations.",
+      "value": "Government data rather than a private ranking, so job-market strength and pay can be compared metro to metro on a consistent method.",
+      "aud": "Someone comparing cities for a tech career.",
+      "lim": "Covers jobs and wages only — says nothing about housing, safety, or quality of life.",
+      "metros": "all"
+    },
+    {
+      "id": "acs",
+      "cat": "Housing & Affordability",
+      "path": "Housing & Affordability › Housing Costs",
+      "title": "2024 American Community Survey — Selected Housing Characteristics (DP04)",
+      "pub": "U.S. Census Bureau",
+      "type": "Federal statistical (primary)",
+      "url": "https://data.census.gov/table/ACSDP1Y2024.DP04",
+      "covers": "Rent, home values, total housing costs, vacancy, and share of income going toward housing.",
+      "value": "Housing drives whether a salary actually goes far; ACS gives a reliable metro-level comparison instead of state averages.",
+      "aud": "Anyone comparing housing costs between cities.",
+      "lim": "Large tables to sort through, and it never puts housing cost next to local tech salaries.",
+      "metros": "all"
+    },
+    {
+      "id": "hud",
+      "cat": "Housing & Affordability",
+      "path": "Housing & Affordability › Tech-Hub Case Studies",
+      "title": "Comprehensive Housing Market Analysis — North Port–Sarasota–Bradenton, FL",
+      "pub": "U.S. Dept. of Housing and Urban Development",
+      "type": "Federal case study",
+      "url": "https://www.huduser.gov/portal/publications/pdf/NorthPortSarasotaBradentonFL-CHMA-25.pdf",
+      "covers": "One metro in depth: employment, population growth, home sales, rentals, construction, and forecast housing demand.",
+      "value": "A close read of a market I would actually consider, which can be set against salary and job data from the other sources.",
+      "aud": "Someone considering the Sarasota area for work or relocation.",
+      "lim": "Sarasota is a smaller tech market than Austin or Raleigh, so it does not generalize.",
+      "metros": "sarasota"
+    },
+    {
+      "id": "bea",
+      "cat": "Cost of Living",
+      "path": "Cost of Living › Metro Price Levels",
+      "title": "Regional Price Parities by State and Metro Area",
+      "pub": "U.S. Bureau of Economic Analysis",
+      "type": "Federal statistical (derived index)",
+      "url": "https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area",
+      "covers": "Price levels compared between states and metro areas as an index against the national average.",
+      "value": "Turns raw salary into purchasing power — the single most useful adjustment in the whole collection.",
+      "aud": "Anyone comparing affordability or purchasing power between cities.",
+      "lim": "An overall price measure; it will not match any individual's real spending mix.",
+      "metros": "all"
+    },
+    {
+      "id": "fbi",
+      "cat": "Safety & Quality of Life",
+      "path": "Safety & Quality of Life › Crime & Safety",
+      "title": "2024 Reported Crimes in the Nation",
+      "pub": "Federal Bureau of Investigation",
+      "type": "Federal statistical (agency-reported)",
+      "url": "https://www.fbi.gov/news/press-releases/fbi-releases-2024-reported-crimes-in-the-nation-statistics",
+      "covers": "Violent and property crime reported by law-enforcement agencies across the country.",
+      "value": "A defensible safety source in place of an online “safest cities” ranking with an unclear method.",
+      "aud": "Anyone comparing places to live who wants safety in the decision.",
+      "lim": "Metro-level totals hide big differences between neighborhoods, and reporting coverage varies by agency.",
+      "metros": "all"
+    },
+    {
+      "id": "insidetrack",
+      "cat": "Overall Tech-Hub Comparisons",
+      "path": "Overall Tech-Hub Comparisons › Careers & Affordability",
+      "title": "Best Cities for Tech Jobs in 2026 — Salary and Demand Data",
+      "pub": "InsideTrack",
+      "type": "Industry / private dataset",
+      "url": "https://insidetrackjobs.com/resources/job-market-by-city/",
+      "covers": "Major U.S. metros ranked on tech job demand, salaries, hiring growth, and cost-of-living-adjusted pay.",
+      "value": "Combines several parts of the topic at once, which is a useful cross-check on my own metro comparisons.",
+      "aud": "Students, recent grads, or anyone comparing cities for a tech career.",
+      "lim": "Built from InsideTrack's own job-listing database, so it under-represents employers who post elsewhere.",
+      "metros": "all"
+    },
+    {
+      "id": "reddit",
+      "cat": "Community Perspectives",
+      "path": "Community Perspectives › Living in Tech Cities",
+      "title": "r/SameGrassButGreener — “B-list” tech cities that are actually nice places to live?",
+      "pub": "Reddit",
+      "type": "Community / opinion",
+      "url": "https://www.reddit.com/r/SameGrassButGreener/comments/1q0vtee/blist_tech_cities_that_are_actually_nice_places/",
+      "covers": "A discussion of smaller or less obvious tech cities that may still have strong jobs and be enjoyable to live in.",
+      "value": "Residents raise things a government report never shows — the reason the collection has a qualitative category at all.",
+      "aud": "Someone trying to get a more personal feel for different cities.",
+      "lim": "Opinion based; comments are never used as proof of a factual claim.",
+      "metros": "all"
+    }
+  ]
+}

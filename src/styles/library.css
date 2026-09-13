@@ -1,0 +1,10 @@
+.libgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px;align-items:start}
+.cat{padding:18px 18px 14px;display:grid;gap:12px}
+.cat .ch{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.cat h2{font-size:16px}
+.scard{padding:12px 13px;border:1px solid var(--edge);background:var(--glass-2);border-radius:calc(var(--r) - 9px);display:grid;gap:6px;cursor:pointer;text-align:left;font-family:var(--font)}
+.scard:hover{background:#fff}
+.scard .nm{font-size:13px;font-weight:600;line-height:1.35}
+.scard .pub{font-family:var(--mono);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.slot{border:1px dashed color-mix(in oklch,var(--ink-3),transparent 45%);background:repeating-linear-gradient(45deg,rgba(255,255,255,.5) 0 6px,rgba(255,255,255,.14) 6px 12px);
+  border-radius:calc(var(--r) - 9px);padding:11px 13px;font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
