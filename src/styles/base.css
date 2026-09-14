@@ -16,6 +16,12 @@ a:hover{color:var(--ink);text-decoration:underline}
 .glass{background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   border:1px solid var(--edge);border-radius:var(--r);box-shadow:var(--shadow)}
 .mono{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+.section-label{margin-bottom:10px}
+.lede{display:grid;gap:12px}
+.lede p,.prose{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:70ch}
+.stack{display:grid;gap:18px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.boot{margin:0;font-size:18px;line-height:1.5;color:var(--ink)}
 h1,h2,h3{font-family:var(--display);font-weight:var(--display-w);letter-spacing:var(--display-ls);margin:0;text-wrap:pretty}
 .btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:10px 15px;border-radius:99px;
   background:var(--ink);color:#fff;border:0;cursor:pointer;font-family:var(--font);text-decoration:none}

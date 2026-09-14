@@ -10,7 +10,8 @@ export function CompareGrid() {
   const defined = picks.filter((m): m is Metro => m !== null);
 
   return (
-    <div className="cmpgrid" id="cmpgrid">
+    <div className="cmpwrap">
+      <div className="cmpgrid" id="cmpgrid">
       <div className="cmplabel" />
       {picks.map((m, i) => (
         <div className="cmphead glass" key={`head-${i}`}>
@@ -44,7 +45,20 @@ export function CompareGrid() {
             </div>
             {picks.map((m, i) => {
               const n = vals[i];
-              if (!m || n === null) return <div className="cmpcell" key={`${x.k}-${i}`} />;
+              if (!m) {
+                return (
+                  <div className="cmpcell empty" key={`${x.k}-${i}`}>
+                    <span className="d">Choose a metro</span>
+                  </div>
+                );
+              }
+              if (n === null) {
+                return (
+                  <div className="cmpcell empty" key={`${x.k}-${i}`}>
+                    <span className="d">No figure</span>
+                  </div>
+                );
+              }
               return (
                 <div
                   className={`cmpcell glass${marked !== null && n === marked ? " best" : ""}`}
@@ -66,6 +80,7 @@ export function CompareGrid() {
           </Fragment>
         );
       })}
+      </div>
     </div>
   );
 }

@@ -10,9 +10,9 @@ export function MetricGuide({ lead }: { lead?: string }) {
         </p>
       ))}
       <p>
-        Crime stays blank unless FBI CIUS 2024 Table 6 publishes a metro rate. School and
-        childcare sources stay in the library as tools and labeled facts, not as scores on these
-        cards. National medians and long-run history also sit on source pages, not on the cards.
+        I leave crime blank unless FBI CIUS 2024 Table 6 publishes a metro rate. Schools and
+        childcare stay in the library as tools and labeled facts. National medians and long-run
+        history stay on the source pages, not on these cards.
       </p>
     </div>
   );

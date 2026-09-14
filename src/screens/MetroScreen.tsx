@@ -23,13 +23,13 @@ const SECTIONS: { title: string; cats: string[] }[] = [
 
 const PLACE_NOTES: Record<string, string> = {
   tampa:
-    "The Tampa Bay Partnership report is an eight-county region, not the Tampa MSA. Niche reviews are the City of Tampa.",
-  austin: "The Austin community survey covers city limits, not the Austin MSA.",
+    "The Tampa Bay Partnership report covers an eight-county region, not the Tampa MSA. The Niche reviews are for the City of Tampa.",
+  austin: "The Austin community survey is city limits, not the Austin MSA.",
   raleigh:
-    "The Raleigh community survey covers city limits. The RDU thread treats Raleigh and Durham as separate cities, not one MSA.",
-  sarasota: "The HUD housing analysis is North Port–Sarasota–Bradenton only.",
+    "The Raleigh community survey is city limits. The RDU thread treats Raleigh and Durham as separate cities, not one MSA.",
+  sarasota: "The HUD housing analysis is only North Port–Sarasota–Bradenton.",
   orlando:
-    "The Partnership article is Orlando as that article defines it. Niche reviews are the City of Orlando.",
+    "The Partnership article is Orlando as that article defines it. The Niche reviews are for the City of Orlando.",
 };
 
 function FactLine({ source, fact }: { source: Source; fact: SourceFact }) {
@@ -104,14 +104,14 @@ export function MetroScreen() {
           </div>
           <h1 id="md-name">{metro?.name ?? "Metro"}</h1>
           {metro ? (
-            <div className="tags" id="md-tags" style={{ marginTop: 10 }}>
+            <div className="tags" id="md-tags">
               <span className="tag">
                 {local.length} place-specific {local.length === 1 ? "source" : "sources"}
               </span>
             </div>
           ) : null}
         </div>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <div className="actions">
           <button type="button" className="btn ghost" onClick={() => go("map")}>
             ← Back to map
           </button>
@@ -129,10 +129,8 @@ export function MetroScreen() {
               const items = local.filter((s) => section.cats.some((cat) => sourceInCategory(s, cat)));
               if (!items.length) return null;
               return (
-                <div key={section.title}>
-                  <div className="mono" style={{ marginTop: 12 }}>
-                    {section.title}
-                  </div>
+                <div className="md-section" key={section.title}>
+                  <div className="mono">{section.title}</div>
                   {items.map((s) => (
                     <PlaceSource key={s.id} source={s} onOpen={openSource} />
                   ))}
@@ -140,13 +138,14 @@ export function MetroScreen() {
               );
             })}
             {local.length === 0 ? (
-              <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--ink-2)" }}>
-                No place-specific source in the collection. National sources are listed at right.
+              <p className="prose">
+                I do not have a place-specific source for this metro. The national sources are on
+                the right.
               </p>
             ) : null}
           </div>
         </div>
-        <div style={{ display: "grid", gap: 18 }}>
+        <div className="stack">
           <ProvenancePanel />
           {namedFacts.length ? (
             <div className="panel glass">
@@ -184,7 +183,7 @@ export function MetroScreen() {
           {note ? (
             <div className="panel glass">
               <h2>A note on geography</h2>
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6, color: "var(--ink-2)" }}>{note}</p>
+              <p className="prose">{note}</p>
             </div>
           ) : null}
         </div>

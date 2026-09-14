@@ -8,8 +8,8 @@ export function CompareScreen() {
     <section className="screen" id="s-compare">
       <div className="detailhead glass">
         <div>
-          <div className="mono">Compare</div>
-          <h1>Three metros, available measures</h1>
+          <div className="mono section-label">Compare</div>
+          <h1>Three metros, only the measures that have a number</h1>
         </div>
         <button type="button" className="btn ghost" onClick={() => go("map")}>
           ← Back to map
@@ -17,9 +17,9 @@ export function CompareScreen() {
       </div>
       <CompareGrid />
       <div className="note">
-        Outlined cell is the higher or lower of the three that have a number, depending on the row.
+        The outlined cell is the higher or lower of the ones that actually have a figure.
       </div>
-      <div className="panel glass" style={{ marginTop: 16 }}>
+      <div className="panel glass">
         <h2>What these rows mean</h2>
         <MetricGuide />
       </div>

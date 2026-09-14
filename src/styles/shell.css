@@ -19,16 +19,15 @@ html[data-screen="map"] #s-map,html[data-screen="metro"] #s-metro,html[data-scre
 html[data-screen="compare"] #s-compare,html[data-screen="source"] #s-source,html[data-screen="about"] #s-about{display:flex}
 
 .intro{padding:26px 28px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start}
+.intro.single{grid-template-columns:minmax(0,1fr)}
 .intro h1{font-size:clamp(28px,3.4vw,42px);line-height:1.04;margin-bottom:12px}
-.intro p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-2);max-width:62ch}
+.intro p,.intro .lede p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:62ch}
 .introfacts{display:grid;gap:10px}
-.fact{display:flex;justify-content:space-between;gap:14px;padding:10px 12px;border-radius:calc(var(--r) - 10px);background:var(--glass-2);border:1px solid var(--edge)}
-.fact b{font-size:13px;font-weight:600;white-space:nowrap}
-.fact span{font-size:12.5px;color:var(--ink-3);text-align:right}
+.fact{display:grid;gap:4px;padding:12px 14px;border-radius:calc(var(--r) - 10px);background:var(--glass-2);border:1px solid var(--edge)}
+.fact b{font-size:13px;font-weight:600}
+.fact span{font-size:12.5px;color:var(--ink-3);line-height:1.45}
 
 @media(max-width:1000px){
   .maprow,.twocol,.entry,.intro{grid-template-columns:minmax(0,1fr)}
-  .cmpgrid{grid-template-columns:minmax(0,1fr)}
-  .cmplabel{padding-top:10px}
   .raillist{max-height:none}
 }

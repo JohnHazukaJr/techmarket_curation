@@ -131,9 +131,7 @@ export function CategoryGrid() {
                 >
                   <span className="pub">{s.pub}</span>
                   <span className="nm">{s.title}</span>
-                  <span className="mono" style={{ textTransform: "none", letterSpacing: 0, fontSize: 11 }}>
-                    {s.type}
-                  </span>
+                  <span className="mono type">{s.type}</span>
                   <span className="tags">
                     <span className="tag">{s.format}</span>
                     <span className="tag" title={s.geoLabel}>

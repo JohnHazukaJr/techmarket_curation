@@ -192,9 +192,7 @@ export function CollectionProvider({ children }: { children: ReactNode }) {
   if (error) {
     return (
       <div className="wrap">
-        <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, color: "#111" }}>
-          Could not load the collection: {error}
-        </p>
+        <p className="boot">Could not load the collection: {error}</p>
       </div>
     );
   }
@@ -202,9 +200,7 @@ export function CollectionProvider({ children }: { children: ReactNode }) {
   if (!value) {
     return (
       <div className="wrap">
-        <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, color: "#111" }}>
-          Loading Tech-Hub Housing Markets…
-        </p>
+        <p className="boot">Loading Tech-Hub Housing Markets…</p>
       </div>
     );
   }

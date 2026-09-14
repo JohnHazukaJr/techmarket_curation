@@ -23,7 +23,7 @@ export const METRICS: MetricDef[] = [
     cite: "BLS May 2025 OEWS, SOC 15-0000, annual mean, metropolitan area",
     pending: "BLS May 2025 OEWS, Computer and Mathematical Occupations, annual mean.",
     meaning:
-      "Annual mean wage for computer and mathematical occupations in the metro. This mixes experience levels. It is not a new-grad offer and not all-occupations pay.",
+      "This is the annual mean for computer and mathematical occupations in the metro. It mixes experience levels, so it is not what I would expect as a new-grad offer, and it is not all-occupations pay.",
     unit: "USD annual mean wage, SOC 15-0000",
     dataYear: "May 2025",
     published: "May 15, 2026",
@@ -38,7 +38,7 @@ export const METRICS: MetricDef[] = [
     cite: "Census ACS 2024 1-year B25064 / DP04, metropolitan statistical area",
     pending: "Census ACS 2024 1-year median gross rent.",
     meaning:
-      "Median monthly rent plus utilities for renter households that pay cash rent. This is not a current listing and not a three-bedroom quote.",
+      "Median monthly rent plus utilities for renter households that pay cash rent. It is not a current listing and not a quote for a three-bedroom.",
     unit: "USD per month",
     dataYear: "2024",
     published: "2024 ACS 1-year",
@@ -53,7 +53,7 @@ export const METRICS: MetricDef[] = [
     cite: "Census ACS 2024 1-year B25077 / DP04, metropolitan statistical area",
     pending: "Census ACS 2024 1-year median owner-occupied home value.",
     meaning:
-      "Median value of owner-occupied homes in the metro. This is not a current asking price and not the HUD average sale used on the Sarasota source page.",
+      "Median value of owner-occupied homes in the metro. Not a current asking price, and not the HUD average sale I used on the Sarasota source page.",
     unit: "USD",
     dataYear: "2024",
     published: "2024 ACS 1-year",
@@ -68,7 +68,7 @@ export const METRICS: MetricDef[] = [
     cite: "BEA RPP all items, 2023 · released Dec 12, 2024 · 100 = U.S. average",
     pending: "BEA Regional Price Parities, 2023, released December 12, 2024.",
     meaning:
-      "How expensive everyday prices are here versus the U.S. average of 100. 105 means about 5% above average. This is not a rent quote or a grocery bill.",
+      "How expensive everyday prices are here versus a U.S. average of 100. 105 means about 5% above average. This is not a rent quote or a grocery bill.",
     unit: "index, 100 = U.S. average",
     dataYear: "2023",
     published: "December 12, 2024",
@@ -83,7 +83,7 @@ export const METRICS: MetricDef[] = [
     cite: "BEA RPP housing rents, 2023 · released Dec 12, 2024 · 100 = U.S. average",
     pending: "BEA housing Regional Price Parities, 2023, released December 12, 2024.",
     meaning:
-      "How expensive housing rents are versus the U.S. average of 100. Lower means cheaper housing, not a cheaper city in every other way. This is not a listing price.",
+      "How expensive housing rents are versus a U.S. average of 100. Lower means cheaper housing, not a cheaper city in every other way.",
     unit: "index, 100 = U.S. average",
     dataYear: "2023",
     published: "December 12, 2024",
@@ -99,7 +99,7 @@ export const METRICS: MetricDef[] = [
     pending:
       "FBI CIUS 2024 Table 6. Blank when that table has no MSA row for this metro.",
     meaning:
-      "Estimated violent crimes per 100,000 people in the metro, from agencies that reported enough of the population. Not a neighborhood score. Atlanta, Miami, Orlando, Tampa, and Sarasota stay blank because Table 6 has no MSA rate for them.",
+      "Estimated violent crimes per 100,000 people in the metro, from agencies that reported enough of the population. It is not a neighborhood score. Atlanta, Miami, Orlando, Tampa, and Sarasota stay blank because Table 6 has no MSA rate for them.",
     unit: "violent crimes per 100,000 inhabitants",
     dataYear: "2024",
     published: "August 5, 2025",
@@ -114,7 +114,7 @@ export const METRICS: MetricDef[] = [
     cite: "BEA Table 3, real personal income, 2022→2023 · released Dec 12, 2024",
     pending: "BEA Table 3, real personal income, 2022→2023, released December 12, 2024.",
     meaning:
-      "Percent change in the metro’s total real personal income from 2022 to 2023, after inflation. A plus does not mean a typical paycheck went up.",
+      "How much the metro’s total real personal income changed from 2022 to 2023, after inflation. A plus does not mean a typical paycheck went up.",
     unit: "percent change",
     dataYear: "2022–2023",
     published: "December 12, 2024",
@@ -129,7 +129,7 @@ export const METRICS: MetricDef[] = [
     cite: "BEA Table 3, real personal income 2023, constant 2017 $ · released Dec 12, 2024",
     pending: "BEA Table 3, real personal income 2023, released December 12, 2024.",
     meaning:
-      "All personal income in the metro, in billions of 2017 dollars. Larger metros show bigger totals. This is not household income or starting tech pay.",
+      "All personal income in the metro, in billions of 2017 dollars. Bigger metros show bigger totals. This is not household income or starting tech pay.",
     unit: "billions of constant 2017 dollars",
     dataYear: "2023",
     published: "December 12, 2024",

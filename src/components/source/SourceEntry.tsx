@@ -59,7 +59,7 @@ export function SourceEntry() {
             ))}
           </div>
         ) : null}
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", paddingTop: 6 }}>
+        <div className="actions">
           <a className="btn" id="se-url" href={s.url} target="_blank" rel="noopener">
             Visit source ↗
           </a>
