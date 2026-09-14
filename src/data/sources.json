@@ -77,12 +77,34 @@
       "published": "July 3, 2025",
       "facts": [
         {
-          "text": "Tech employment nears 80,000",
-          "unit": "tech jobs (article title / 2025 projection)",
+          "text": "Tech workers in the Orlando MSA numbered 77,700 in 2024",
+          "unit": "net tech jobs (occupations plus tech-company jobs, less overlap)",
+          "geography": "Orlando–Kissimmee–Sanford MSA, as defined in the article",
+          "dataYear": "2024",
+          "published": "July 3, 2025"
+        },
+        {
+          "text": "Tech employment is projected to reach nearly 80,000 in 2025",
+          "unit": "tech jobs (2025 projection)",
           "geography": "Orlando area as defined in the article",
           "dataYear": "2025 projection, using 2024 data",
           "published": "July 3, 2025",
-          "note": "The title is the 2025 projection. The article uses 2024 data; I am not treating 80,000 as a 2024 count."
+          "note": "The title uses this projection. I am not treating 80,000 as a 2024 count."
+        },
+        {
+          "text": "Tech employment grew 2.3% in 2024, second among the nation’s 30 most populous regions",
+          "unit": "percent change in tech employment",
+          "geography": "Orlando region compared with the 30 most populous U.S. regions, as defined in the article",
+          "dataYear": "2024",
+          "published": "July 3, 2025"
+        },
+        {
+          "text": "Median salary for workers in tech occupations was $103,000 in 2024",
+          "unit": "USD annual median, tech occupations",
+          "geography": "Orlando area as defined in the article",
+          "dataYear": "2024",
+          "published": "July 3, 2025",
+          "note": "This is a median for tech occupations, not starting pay and not a BLS metro wage I am putting on the cards."
         }
       ],
       "format": "article"
@@ -131,7 +153,46 @@
       ],
       "dataYear": "April 1, 2025 conditions",
       "published": "April 1, 2025",
-      "format": "report"
+      "format": "report",
+      "facts": [
+        {
+          "text": "Population of the HMA is estimated at 948,000",
+          "unit": "people",
+          "geography": "North Port–Sarasota–Bradenton HMA (Manatee and Sarasota Counties)",
+          "dataYear": "as of April 1, 2025",
+          "published": "April 1, 2025"
+        },
+        {
+          "text": "Average home sales price $564,900 during the 12 months ending March 2025, down 1% from the year before",
+          "unit": "USD average sale price, not an ACS median home value",
+          "geography": "North Port–Sarasota–Bradenton HMA",
+          "dataYear": "12 months ending March 2025",
+          "published": "April 1, 2025",
+          "note": "HUD citing Cotality. This is an average sale, not the ACS median I would put on a metro card."
+        },
+        {
+          "text": "28,800 home sales during the 12 months ending March 2025, down 6% from the previous 12 months",
+          "unit": "homes sold; percent change",
+          "geography": "North Port–Sarasota–Bradenton HMA",
+          "dataYear": "12 months ending March 2025",
+          "published": "April 1, 2025"
+        },
+        {
+          "text": "Average apartment rent $1,991 as of the first quarter of 2025, down $22 or 1% from a year earlier",
+          "unit": "USD per month, average apartment rent (CoStar via HUD)",
+          "geography": "North Port–Sarasota–Bradenton HMA",
+          "dataYear": "first quarter 2025",
+          "published": "April 1, 2025",
+          "note": "This is not ACS median gross rent and is not on the metro rent card."
+        },
+        {
+          "text": "Apartment vacancy 11.5% as of the first quarter of 2025, up from 8.8% a year earlier",
+          "unit": "percent of apartments vacant (CoStar via HUD)",
+          "geography": "North Port–Sarasota–Bradenton HMA",
+          "dataYear": "first quarter 2025",
+          "published": "April 1, 2025"
+        }
+      ]
     },
     {
       "id": "zillow",
@@ -335,7 +396,38 @@
       ],
       "dataYear": "2026 report",
       "published": "2026 Regional Competitiveness Report",
-      "format": "report"
+      "format": "report",
+      "facts": [
+        {
+          "text": "Values improved in 39 of 61 indicators (64%)",
+          "unit": "count and share of report indicators",
+          "geography": "Tampa Bay eight-county region (Citrus, Hernando, Hillsborough, Manatee, Pasco, Pinellas, Polk, and Sarasota) — not the Tampa MSA",
+          "dataYear": "2026 report",
+          "published": "2026 Regional Competitiveness Report"
+        },
+        {
+          "text": "ALICE + poverty threshold now at 46.30% of households",
+          "unit": "percent of households",
+          "geography": "Tampa Bay eight-county region — not the Tampa MSA",
+          "dataYear": "2026 report",
+          "published": "2026 Regional Competitiveness Report"
+        },
+        {
+          "text": "Wages in Tampa Bay increased by more than 5% year over year",
+          "unit": "percent change in wages",
+          "geography": "Tampa Bay eight-county region — not the Tampa MSA",
+          "dataYear": "2026 report",
+          "published": "2026 Regional Competitiveness Report",
+          "note": "A regional wage change, not a metro starting salary or a BLS OEWS figure."
+        },
+        {
+          "text": "Share of 3- and 4-year-olds enrolled in school fell from 49.89% to 48.25%",
+          "unit": "percent of 3- and 4-year-olds",
+          "geography": "Tampa Bay eight-county region — not the Tampa MSA",
+          "dataYear": "2026 report",
+          "published": "2026 Regional Competitiveness Report"
+        }
+      ]
     },
     {
       "id": "reddit",
@@ -589,7 +681,8 @@
           "geography": "Case-Shiller-style 20-city set, as discussed in the May 15, 2025 podcast",
           "dataYear": "about 2000 through the mid-2020s",
           "published": "May 15, 2025",
-          "note": "Spoken long-run history, not a 2025 asking price."
+          "note": "Spoken long-run history, not a 2025 asking price.",
+          "attach": ["miami", "tampa", "phoenix"]
         },
         {
           "text": "Spoken real price growth since 2000: Miami 137%, Dallas 57%, Atlanta 32%",

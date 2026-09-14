@@ -63,6 +63,7 @@ export const sourceFactSchema = z.object({
   dataYear: z.string().min(1),
   published: z.string().min(1),
   note: z.string().optional(),
+  attach: z.array(z.string()).optional(),
 });
 
 export const sourceSchema = z.object({

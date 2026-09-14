@@ -83,6 +83,7 @@ export interface SourceFact {
   dataYear: string;
   published: string;
   note?: string;
+  attach?: string[];
 }
 
 export interface Source {

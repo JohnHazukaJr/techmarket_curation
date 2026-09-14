@@ -51,6 +51,7 @@ export function SourceEntry() {
                     dataYear={fact.dataYear}
                     published={fact.published}
                     href={s.url}
+                    short={`${fact.geography} · ${fact.unit} · ${fact.dataYear}`}
                   />
                 </p>
                 {fact.note ? <p>{fact.note}</p> : null}

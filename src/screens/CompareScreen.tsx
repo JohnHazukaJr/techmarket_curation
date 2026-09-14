@@ -9,7 +9,7 @@ export function CompareScreen() {
       <div className="detailhead glass">
         <div>
           <div className="mono">Compare</div>
-          <h1>Three metros, BEA measures</h1>
+          <h1>Three metros, available measures</h1>
         </div>
         <button type="button" className="btn ghost" onClick={() => go("map")}>
           ← Back to map

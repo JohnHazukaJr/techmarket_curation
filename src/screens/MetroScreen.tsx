@@ -28,6 +28,8 @@ const PLACE_NOTES: Record<string, string> = {
   raleigh:
     "The Raleigh community survey covers city limits. The RDU thread treats Raleigh and Durham as separate cities, not one MSA.",
   sarasota: "The HUD housing analysis is North Port–Sarasota–Bradenton only.",
+  orlando:
+    "The Partnership article is Orlando as that article defines it. Niche reviews are the City of Orlando.",
 };
 
 function FactLine({ source, fact }: { source: Source; fact: SourceFact }) {
@@ -40,7 +42,7 @@ function FactLine({ source, fact }: { source: Source; fact: SourceFact }) {
         dataYear={fact.dataYear}
         published={fact.published}
         href={source.url}
-        short={`${fact.dataYear} · ${fact.published}`}
+        short={`${fact.geography} · ${fact.unit} · ${fact.dataYear}`}
       />
       {fact.note ? ` ${fact.note}` : null}
     </p>

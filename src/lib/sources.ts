@@ -9,7 +9,7 @@ const PLACE_ALIASES: Record<string, string[]> = {
   tampa: ["tampa"],
 };
 
-const MSA_COMPARABLE_FORMATS = new Set(["federal table", "tool"]);
+const MSA_COMPARABLE_FORMATS = new Set(["federal table"]);
 
 export function sourceCategories(source: Source): string[] {
   return source.cats.length ? source.cats : [source.cat];
@@ -47,9 +47,12 @@ export function sourceSearchHaystack(source: Source): string {
 }
 
 export function factNamesPlace(fact: SourceFact, metroId: string): boolean {
+  if (fact.attach?.length) {
+    return fact.attach.includes(metroId);
+  }
   const aliases = PLACE_ALIASES[metroId];
   if (!aliases) return false;
-  const hay = `${fact.geography} ${fact.text}`.toLowerCase();
+  const hay = fact.geography.toLowerCase();
   return aliases.some((alias) => hay.includes(alias));
 }
 
@@ -68,7 +71,9 @@ export function namedFactsForMetro(
 
 export function geoBadge(source: Source): string {
   if (source.geoLevel === "national") {
-    return MSA_COMPARABLE_FORMATS.has(source.format) ? "National / MSA-comparable" : "National";
+    if (MSA_COMPARABLE_FORMATS.has(source.format)) return "National / MSA-comparable";
+    if (source.format === "tool") return "National tool";
+    return "National";
   }
   if (source.geoLevel === "city") return "City";
   if (source.geoLevel === "region") return "Region · not MSA";
@@ -77,9 +82,9 @@ export function geoBadge(source: Source): string {
 
 export function metrosLabel(source: Source): string {
   if (isNationalSource(source)) {
-    return MSA_COMPARABLE_FORMATS.has(source.format)
-      ? "National / all comparable metros"
-      : "National";
+    if (MSA_COMPARABLE_FORMATS.has(source.format)) return "National / all comparable metros";
+    if (source.format === "tool") return "National tool";
+    return "National";
   }
   return source.metros.map((id) => `#${id}`).join(", ");
 }
