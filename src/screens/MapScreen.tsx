@@ -46,7 +46,7 @@ export function MapScreen() {
       </div>
       <div className="note">
         Shaded states have a tracked metro. {current.label}: BEA {current.dataYear}, released{" "}
-        {current.published}.
+        {current.published}. {current.meaning}
       </div>
     </section>
   );

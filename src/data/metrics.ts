@@ -64,6 +64,8 @@ export const METRICS: MetricDef[] = [
     fmt: (v) => v.toFixed(1),
     cite: "BEA RPP all items, 2023 · released Dec 12, 2024 · 100 = U.S. average",
     pending: "BEA Regional Price Parities, 2023, released December 12, 2024.",
+    meaning:
+      "How expensive everyday prices are here versus the U.S. average of 100. 105 means about 5% above average. This is not a rent quote or a grocery bill.",
     unit: "index, 100 = U.S. average",
     dataYear: "2023",
     published: "December 12, 2024",
@@ -77,6 +79,8 @@ export const METRICS: MetricDef[] = [
     fmt: (v) => v.toFixed(1),
     cite: "BEA RPP housing rents, 2023 · released Dec 12, 2024 · 100 = U.S. average",
     pending: "BEA housing Regional Price Parities, 2023, released December 12, 2024.",
+    meaning:
+      "How expensive housing rents are versus the U.S. average of 100. Lower means cheaper housing, not a cheaper city in every other way. This is not a listing price.",
     unit: "index, 100 = U.S. average",
     dataYear: "2023",
     published: "December 12, 2024",
@@ -104,6 +108,8 @@ export const METRICS: MetricDef[] = [
     fmt: (v) => (v > 0 ? "+" : "") + v.toFixed(1) + "%",
     cite: "BEA Table 3, real personal income, 2022→2023 · released Dec 12, 2024",
     pending: "BEA Table 3, real personal income, 2022→2023, released December 12, 2024.",
+    meaning:
+      "Percent change in the metro’s total real personal income from 2022 to 2023, after inflation. A plus does not mean a typical paycheck went up.",
     unit: "percent change",
     dataYear: "2022–2023",
     published: "December 12, 2024",
@@ -111,12 +117,14 @@ export const METRICS: MetricDef[] = [
   },
   {
     k: "income",
-    label: "Real personal income",
+    label: "Real personal income (metro total)",
     hi: true,
     src: "bea",
     fmt: (v) => "$" + (v / 1000).toFixed(1) + "B",
     cite: "BEA Table 3, real personal income 2023, constant 2017 $ · released Dec 12, 2024",
     pending: "BEA Table 3, real personal income 2023, released December 12, 2024.",
+    meaning:
+      "All personal income in the metro, in billions of 2017 dollars. Larger metros show bigger totals. This is not household income or starting tech pay.",
     unit: "billions of constant 2017 dollars",
     dataYear: "2023",
     published: "December 12, 2024",

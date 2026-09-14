@@ -81,7 +81,15 @@ export function MetroScreen() {
   const local = metro
     ? sources.filter((s) => sourceApplies(s, metro.id) && !isNationalSource(s))
     : [];
-  const national = metro ? sources.filter((s) => isNationalSource(s)) : [];
+  const national = metro
+    ? sources
+        .filter((s) => isNationalSource(s))
+        .slice()
+        .sort((a, b) => {
+          const rank = (s: Source) => (s.format === "federal table" || s.format === "tool" ? 0 : 1);
+          return rank(a) - rank(b) || a.title.localeCompare(b.title);
+        })
+    : [];
   const namedFacts = metro ? namedFactsForMetro(sources, metro.id) : [];
   const note = metro ? PLACE_NOTES[metro.id] : undefined;
 
@@ -161,6 +169,12 @@ export function MetroScreen() {
                   <button type="button" className="ttl" onClick={() => openSource(s.id)}>
                     {s.title}
                   </button>
+                  <div className="tags">
+                    <span className="tag">{s.format}</span>
+                    <span className="tag" title={s.geoLabel}>
+                      {geoBadge(s)}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>

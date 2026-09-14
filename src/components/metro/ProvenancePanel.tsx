@@ -1,3 +1,4 @@
+import { MetricGuide } from "../cite/MetricGuide";
 import { useCollection } from "../../state/CollectionContext";
 import type { ProvenanceRecord } from "../../types/collection";
 
@@ -36,6 +37,8 @@ export function ProvenancePanel() {
           <ProvenanceRow key={p.table} record={p} />
         ))}
       </div>
+      <h2>What they mean</h2>
+      <MetricGuide />
     </div>
   );
 }

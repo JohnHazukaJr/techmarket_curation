@@ -115,6 +115,7 @@ export interface MetricDef {
   src: string;
   cite: string;
   pending?: string;
+  meaning?: string;
   unit: string;
   dataYear: string;
   published: string;

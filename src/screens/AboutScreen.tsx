@@ -1,3 +1,4 @@
+import { MetricGuide } from "../components/cite/MetricGuide";
 import { useCollection } from "../state/CollectionContext";
 
 export function AboutScreen() {
@@ -47,6 +48,12 @@ export function AboutScreen() {
             <b>Annotate</b>
             <p>What it covers, why it is valuable, who would benefit, and the limitations.</p>
           </div>
+        </div>
+        <div>
+          <div className="mono" style={{ marginBottom: 10 }}>
+            What the numbers mean
+          </div>
+          <MetricGuide lead="The map, metro cards, and compare use four BEA figures from 2023, released December 12, 2024." />
         </div>
         <div>
           <div className="mono" style={{ marginBottom: 10 }}>

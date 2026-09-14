@@ -44,7 +44,7 @@ export function CategoryGrid() {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="housing, childcare, Orlando, FBI…"
+            placeholder="housing, Orlando, BEA, podcast…"
           />
         </label>
         <div className="lib-filters">
@@ -63,7 +63,7 @@ export function CategoryGrid() {
             <span className="mono">Metro</span>
             <select value={metroFilter} onChange={(e) => setMetroFilter(e.target.value)}>
               <option value="all">All places</option>
-              <option value="national">National / all comparable metros</option>
+              <option value="national">National sources</option>
               {metros.map((m) => (
                 <option key={m.id} value={m.id}>
                   {m.name}

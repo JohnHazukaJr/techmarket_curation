@@ -19,7 +19,9 @@ export function MetroRail() {
   const mx = liveVals.length ? Math.max(...liveVals) : 1;
 
   const title = selState ? `${STATENAME[selState]} metros` : `${metros.length} tracked metros`;
-  const sub = selState ? `${list.length} tracked` : "sorted best first; blanks last";
+  const sub = selState
+    ? `${list.length} tracked`
+    : `sorted ${def.hi ? "higher" : "lower"} first; blanks last`;
 
   return (
     <aside className="rail glass">

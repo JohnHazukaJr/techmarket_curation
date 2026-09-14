@@ -39,7 +39,9 @@ export function CompareGrid() {
         const flag = x.hi ? "higher" : "lower";
         return (
           <Fragment key={x.k}>
-            <div className="cmplabel">{x.label}</div>
+            <div className="cmplabel" title={x.meaning}>
+              {x.label}
+            </div>
             {picks.map((m, i) => {
               const n = vals[i];
               if (!m || n === null) return <div className="cmpcell" key={`${x.k}-${i}`} />;

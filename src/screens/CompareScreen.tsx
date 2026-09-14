@@ -1,4 +1,5 @@
 import { CompareGrid } from "../components/compare/CompareGrid";
+import { MetricGuide } from "../components/cite/MetricGuide";
 import { useCollection } from "../state/CollectionContext";
 
 export function CompareScreen() {
@@ -17,7 +18,10 @@ export function CompareScreen() {
       <CompareGrid />
       <div className="note">
         Outlined cell is the higher or lower of the three that have a number, depending on the row.
-        Real personal income is the metro total, so a larger economy wins that row.
+      </div>
+      <div className="panel glass" style={{ marginTop: 16 }}>
+        <h2>What these rows mean</h2>
+        <MetricGuide />
       </div>
     </section>
   );

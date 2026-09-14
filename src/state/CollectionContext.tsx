@@ -116,8 +116,12 @@ export function CollectionProvider({ children }: { children: ReactNode }) {
 
   const go = useCallback(
     (screen: Screen, id?: string) => {
-      if (screen === "compare" && selectedMetroId && !compareIds.includes(selectedMetroId)) {
-        setCompareIds([selectedMetroId, compareIds[0], compareIds[1]]);
+      if (screen === "compare" && selectedMetroId) {
+        setCompareIds((prev) => {
+          if (prev[0] === selectedMetroId) return prev;
+          const rest = prev.filter((id) => id !== selectedMetroId);
+          return [selectedMetroId, rest[0] ?? prev[1], rest[1] ?? prev[2]];
+        });
       }
       const next: Route =
         screen === "metro" && id
@@ -134,7 +138,7 @@ export function CollectionProvider({ children }: { children: ReactNode }) {
       applyScreen(next.screen);
       window.scrollTo(0, 0);
     },
-    [compareIds, selectedMetroId],
+    [selectedMetroId],
   );
 
   const openMetro = useCallback((id: string) => go("metro", id), [go]);
@@ -143,6 +147,8 @@ export function CollectionProvider({ children }: { children: ReactNode }) {
   const setCompareId = useCallback((index: number, id: string) => {
     setCompareIds((prev) => {
       const next: [string, string, string] = [...prev];
+      const other = prev.findIndex((x, i) => i !== index && x === id);
+      if (other >= 0) next[other] = prev[index];
       next[index] = id;
       return next;
     });

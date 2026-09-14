@@ -2,7 +2,7 @@
 .cmphead{padding:14px 16px;display:grid;gap:8px}
 .cmphead .nm{font-size:15px;font-weight:600}
 .cmphead select{font-family:var(--font);font-size:12px;padding:7px 9px;border-radius:8px;border:1px solid var(--hair);background:#fff;color:var(--ink);width:100%}
-.cmplabel{display:flex;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:0 4px}
+.cmplabel{display:flex;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:0 4px;cursor:help}
 .cmpcell{padding:12px 14px;display:grid;gap:6px}
 .cmpcell .v{font-size:17px;font-weight:600}
 .cmpcell .d{font-size:11.5px;color:var(--ink-3);line-height:1.35}

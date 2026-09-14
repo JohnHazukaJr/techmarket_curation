@@ -24,5 +24,7 @@ h1,h2,h3{font-family:var(--display);font-weight:var(--display-w);letter-spacing:
 .note{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);text-align:center}
 .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:99px;background:rgba(0,0,0,.05);color:var(--ink-2)}
 .tags{display:flex;gap:6px;flex-wrap:wrap}
+.metric-guide{display:grid;gap:10px}
+.metric-guide p{margin:0;font-size:13px;line-height:1.6;color:var(--ink-2);max-width:70ch}
 .quote{padding:16px 18px;border-left:3px solid var(--accent);background:var(--glass-2);border-radius:0 calc(var(--r) - 10px) calc(var(--r) - 10px) 0;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
 html[data-dir="b"] .quote{font-family:var(--display);font-style:italic;font-size:16px}

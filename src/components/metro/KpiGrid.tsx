@@ -20,6 +20,7 @@ export function KpiGrid({ metro }: { metro: Metro }) {
             href={x.url}
             short={`${x.src.toUpperCase()} · ${x.dataYear} · ${x.published}`}
           />
+          {x.meaning ? <span className="d">{x.meaning}</span> : null}
         </div>
       ))}
     </div>

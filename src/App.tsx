@@ -18,7 +18,7 @@ function Shell() {
       <CompareScreen />
       <SourceScreen />
       <AboutScreen />
-      <div className="note">JOHN HAZUKA DATA CURATION TEXAS TECH UNIVERSITY</div>
+      <div className="note">John Hazuka · CMPA 4301 · Texas Tech University</div>
     </div>
   );
 }
