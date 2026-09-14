@@ -31,3 +31,15 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           force_orphan: true
+      - name: Publish the build onto main for branch Pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -rf assets data
+          cp dist/index.html index.html
+          cp -r dist/assets assets
+          cp -r dist/data data
+          cp dist/.nojekyll .nojekyll
+          git add -A index.html assets data .nojekyll
+          git diff --cached --quiet || git commit -m "Update GitHub Pages build [skip ci]"
+          git push origin HEAD:main
