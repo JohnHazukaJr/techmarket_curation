@@ -16,16 +16,17 @@ export const METRICS: MetricDef[] = [
   },
   {
     k: "salary",
-    label: "BLS metro wages (May 2025 vintage)",
+    label: "Computer and math occupations, annual mean",
     hi: true,
     src: "bls",
     fmt: (v) => "$" + v.toLocaleString(),
-    cite: "BLS May 2025 metro OEWS",
-    pending:
-      "BLS May 2025 metro OEWS. The source names this vintage but does not give a comparable metro wage figure, so none is shown.",
-    unit: "USD annual wage",
+    cite: "BLS May 2025 OEWS, SOC 15-0000, annual mean, metropolitan area",
+    pending: "BLS May 2025 OEWS, Computer and Mathematical Occupations, annual mean.",
+    meaning:
+      "Annual mean wage for computer and mathematical occupations in the metro. This mixes experience levels. It is not a new-grad offer and not all-occupations pay.",
+    unit: "USD annual mean wage, SOC 15-0000",
     dataYear: "May 2025",
-    published: "May 2025 OEWS vintage",
+    published: "May 15, 2026",
     url: "https://www.bls.gov/oes/current/oessrcma.htm",
   },
   {
@@ -34,12 +35,13 @@ export const METRICS: MetricDef[] = [
     hi: false,
     src: "acs",
     fmt: (v) => "$" + v.toLocaleString() + "/mo",
-    cite: "Census ACS 2024 DP04",
-    pending:
-      "Census ACS 2024 DP04. The source names this table but does not give a comparable metro rent figure, so none is shown.",
+    cite: "Census ACS 2024 1-year B25064 / DP04, metropolitan statistical area",
+    pending: "Census ACS 2024 1-year median gross rent.",
+    meaning:
+      "Median monthly rent plus utilities for renter households that pay cash rent. This is not a current listing and not a three-bedroom quote.",
     unit: "USD per month",
     dataYear: "2024",
-    published: "2024 ACS 1-year DP04",
+    published: "2024 ACS 1-year",
     url: "https://data.census.gov/table/ACSDP1Y2024.DP04",
   },
   {
@@ -48,12 +50,13 @@ export const METRICS: MetricDef[] = [
     hi: false,
     src: "acs",
     fmt: (v) => "$" + Math.round(v / 1000) + "k",
-    cite: "Census ACS 2024 DP04",
-    pending:
-      "Census ACS 2024 DP04. The source names this table but does not give a comparable metro home value, so none is shown.",
+    cite: "Census ACS 2024 1-year B25077 / DP04, metropolitan statistical area",
+    pending: "Census ACS 2024 1-year median owner-occupied home value.",
+    meaning:
+      "Median value of owner-occupied homes in the metro. This is not a current asking price and not the HUD average sale used on the Sarasota source page.",
     unit: "USD",
     dataYear: "2024",
-    published: "2024 ACS 1-year DP04",
+    published: "2024 ACS 1-year",
     url: "https://data.census.gov/table/ACSDP1Y2024.DP04",
   },
   {
@@ -88,17 +91,19 @@ export const METRICS: MetricDef[] = [
   },
   {
     k: "crime",
-    label: "FBI reported crime (2024)",
+    label: "Violent crime rate",
     hi: false,
-    src: "fbi",
-    fmt: (v) => Math.round(v).toLocaleString(),
-    cite: "FBI 2024 reported crimes · released August 5, 2025",
+    src: "fbi-cde",
+    fmt: (v) => v.toFixed(1),
+    cite: "FBI CIUS 2024 Table 6, MSA violent crime per 100,000 · released August 5, 2025",
     pending:
-      "FBI 2024 reported crimes, released August 5, 2025. The source is a national overview and does not give a comparable metro rate, so none is shown.",
-    unit: "reported crimes, national 2024 release",
+      "FBI CIUS 2024 Table 6. Blank when that table has no MSA row for this metro.",
+    meaning:
+      "Estimated violent crimes per 100,000 people in the metro, from agencies that reported enough of the population. Not a neighborhood score. Atlanta, Miami, Orlando, Tampa, and Sarasota stay blank because Table 6 has no MSA rate for them.",
+    unit: "violent crimes per 100,000 inhabitants",
     dataYear: "2024",
     published: "August 5, 2025",
-    url: "https://www.fbi.gov/news/press-releases/fbi-releases-2024-reported-crimes-in-the-nation-statistics",
+    url: "https://cde.ucr.cjis.gov/",
   },
   {
     k: "incomeGrowth",
@@ -132,7 +137,17 @@ export const METRICS: MetricDef[] = [
   },
 ];
 
-export const SOURCED_METRICS = METRICS.filter((m) => m.src === "bea");
+const MAP_COMPARE_KEYS: MetricKey[] = [
+  "salary",
+  "rent",
+  "home",
+  "rpp",
+  "rppHousing",
+  "incomeGrowth",
+  "income",
+];
+
+export const SOURCED_METRICS = METRICS.filter((m) => MAP_COMPARE_KEYS.includes(m.k));
 
 export function has(metro: Metro, key: MetricKey): boolean {
   if (key === "after") return false;
@@ -140,7 +155,7 @@ export function has(metro: Metro, key: MetricKey): boolean {
 }
 
 export function live(metro: Metro, metric: MetricDef): boolean {
-  if (metric.k === "after") return has(metro, "salary") && has(metro, "rent") && has(metro, "rpp");
+  if (metric.k === "after") return false;
   return has(metro, metric.k);
 }
 

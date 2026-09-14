@@ -16,35 +16,34 @@
   },
   "acs_dp04": {
    "source": "acs",
-   "table": "ACS 1-Year Data Profile DP04, Selected Housing Characteristics",
+   "table": "ACS 2024 1-year B25064 median gross rent and B25077 median home value, metropolitan statistical area (same estimates as DP04 housing medians)",
    "vintage": "2024",
+   "released": "2025",
    "variables": {
-    "rent": "median gross rent as named in the ACS 2024 DP04 source",
-    "home": "home values as named in the ACS 2024 DP04 source"
+    "rent": "B25064_001E median gross rent, USD/month",
+    "home": "B25077_001E median value of owner-occupied units, USD"
    },
-   "status": "awaiting pull — source does not give a comparable metro figure",
    "url": "https://data.census.gov/table/ACSDP1Y2024.DP04"
   },
   "bls_oews_metro": {
    "source": "bls",
-   "table": "May 2025 Metropolitan and Nonmetropolitan Area Occupational Employment and Wage Estimates",
+   "table": "May 2025 OEWS, Computer and Mathematical Occupations (SOC 15-0000), annual mean wage, metropolitan area",
    "vintage": "May 2025",
+   "released": "2026-05-15",
    "variables": {
-    "salary": "metro OEWS wages, May 2025 vintage"
+    "salary": "OEWS annual mean wage, SOC 15-0000"
    },
-   "status": "awaiting pull — source does not give a comparable metro figure",
    "url": "https://www.bls.gov/oes/current/oessrcma.htm"
   },
   "fbi_cde": {
-   "source": "fbi",
-   "table": "FBI 2024 reported crimes in the nation",
+   "source": "fbi-cde",
+   "table": "Crime in the United States, 2024, Table 6, by Metropolitan Statistical Area — violent crime rate per 100,000",
    "vintage": "2024",
    "released": "2025-08-05",
    "variables": {
-    "crime": "2024 reported crimes; release date August 5, 2025"
+    "crime": "violent crime offenses per 100,000 inhabitants, MSA estimated total"
    },
-   "status": "awaiting pull — source does not give a comparable metro figure",
-   "url": "https://www.fbi.gov/news/press-releases/fbi-releases-2024-reported-crimes-in-the-nation-statistics"
+   "url": "https://cde.ucr.cjis.gov/"
   }
  },
  "metros": [
@@ -58,10 +57,10 @@
    "rppHousing": 126.4,
    "income": 169550,
    "incomeGrowth": 5.4,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 122150,
+   "rent": 1784,
+   "home": 482800,
+   "crime": 296.6
   },
   {
    "id": "raleigh",
@@ -73,10 +72,10 @@
    "rppHousing": 104,
    "income": 96230,
    "incomeGrowth": 3.8,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 113790,
+   "rent": 1674,
+   "home": 465800,
+   "crime": 250.7
   },
   {
    "id": "denver",
@@ -88,10 +87,10 @@
    "rppHousing": 146.1,
    "income": 211551,
    "incomeGrowth": 2.3,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 129650,
+   "rent": 1943,
+   "home": 631000,
+   "crime": 566.2
   },
   {
    "id": "slc",
@@ -103,10 +102,10 @@
    "rppHousing": 118.6,
    "income": 76992,
    "incomeGrowth": 1.5,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 112170,
+   "rent": 1659,
+   "home": 575200,
+   "crime": 350
   },
   {
    "id": "sarasota",
@@ -118,9 +117,9 @@
    "rppHousing": 137.6,
    "income": 54737,
    "incomeGrowth": 3,
-   "salary": null,
-   "rent": null,
-   "home": null,
+   "salary": 107530,
+   "rent": 1920,
+   "home": 452100,
    "crime": null
   },
   {
@@ -133,9 +132,9 @@
    "rppHousing": 156.4,
    "income": 387653,
    "incomeGrowth": 4,
-   "salary": null,
-   "rent": null,
-   "home": null,
+   "salary": 109230,
+   "rent": 2083,
+   "home": 510600,
    "crime": null
   },
   {
@@ -148,10 +147,10 @@
    "rppHousing": 110.7,
    "income": 592094,
    "incomeGrowth": 4.7,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 114060,
+   "rent": 1469,
+   "home": 339700,
+   "crime": 269.8
   },
   {
    "id": "seattle",
@@ -163,10 +162,10 @@
    "rppHousing": 151.5,
    "income": 295736,
    "incomeGrowth": 5,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 151750,
+   "rent": 2050,
+   "home": 743000,
+   "crime": 385.5
   },
   {
    "id": "atlanta",
@@ -178,9 +177,9 @@
    "rppHousing": 110.9,
    "income": 352688,
    "incomeGrowth": -0.1,
-   "salary": null,
-   "rent": null,
-   "home": null,
+   "salary": 117280,
+   "rent": 1770,
+   "home": 402100,
    "crime": null
   },
   {
@@ -193,10 +192,10 @@
    "rppHousing": 107.3,
    "income": 140840,
    "incomeGrowth": 2.1,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 101460,
+   "rent": 1627,
+   "home": 449300,
+   "crime": 538.7
   },
   {
    "id": "columbus",
@@ -208,10 +207,10 @@
    "rppHousing": 87.1,
    "income": 125225,
    "incomeGrowth": 1.3,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 109520,
+   "rent": 1359,
+   "home": 334800,
+   "crime": 269.2
   },
   {
    "id": "pittsburgh",
@@ -223,10 +222,10 @@
    "rppHousing": 73.5,
    "income": 145279,
    "incomeGrowth": 0.7,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 102340,
+   "rent": 1083,
+   "home": 230300,
+   "crime": 208.8
   },
   {
    "id": "phoenix",
@@ -238,10 +237,10 @@
    "rppHousing": 124.3,
    "income": 265177,
    "incomeGrowth": 1.6,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 112640,
+   "rent": 1819,
+   "home": 470600,
+   "crime": 437.5
   },
   {
    "id": "madison",
@@ -253,10 +252,10 @@
    "rppHousing": 96,
    "income": 45732,
    "incomeGrowth": 2.5,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 107100,
+   "rent": 1437,
+   "home": 415500,
+   "crime": 173.6
   },
   {
    "id": "boise",
@@ -268,10 +267,10 @@
    "rppHousing": 98,
    "income": 46751,
    "incomeGrowth": 2.9,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 105680,
+   "rent": 1628,
+   "home": 484000,
+   "crime": 264
   },
   {
    "id": "huntsville",
@@ -283,10 +282,10 @@
    "rppHousing": 81.1,
    "income": 29769,
    "incomeGrowth": 2.5,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 118200,
+   "rent": 1283,
+   "home": 331800,
+   "crime": 323.9
   },
   {
    "id": "kc",
@@ -298,10 +297,10 @@
    "rppHousing": 88.1,
    "income": 138381,
    "incomeGrowth": 0.8,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 103230,
+   "rent": 1315,
+   "home": 314300,
+   "crime": 609.2
   },
   {
    "id": "sanjose",
@@ -313,10 +312,10 @@
    "rppHousing": 213,
    "income": 212235,
    "incomeGrowth": 4,
-   "salary": null,
-   "rent": null,
-   "home": null,
-   "crime": null
+   "salary": 202060,
+   "rent": 2827,
+   "home": 1528500,
+   "crime": 426.1
   },
   {
    "id": "orlando",
@@ -328,9 +327,9 @@
    "rppHousing": 121,
    "income": 133906,
    "incomeGrowth": 3.3,
-   "salary": null,
-   "rent": null,
-   "home": null,
+   "salary": 105980,
+   "rent": 1877,
+   "home": 409400,
    "crime": null
   },
   {
@@ -343,19 +342,19 @@
    "rppHousing": 123.3,
    "income": 171453,
    "incomeGrowth": 0.5,
-   "salary": null,
-   "rent": null,
-   "home": null,
+   "salary": 108860,
+   "rent": 1776,
+   "home": 387400,
    "crime": null
   }
  ],
  "fillTemplate": {
   "note": "Add these four keys to each metro object only when a collection source states a comparable metro figure. Leave a key null and the UI renders it as an explicit gap rather than a number.",
   "keys": {
-   "salary": "USD annual, BLS May 2025 metro OEWS",
-   "rent": "USD/month, Census ACS 2024 DP04",
-   "home": "USD, Census ACS 2024 DP04",
-   "crime": "FBI 2024 reported crimes"
+   "salary": "USD annual mean, BLS May 2025 OEWS SOC 15-0000",
+   "rent": "USD/month, ACS 2024 1-year median gross rent",
+   "home": "USD, ACS 2024 1-year median owner-occupied value",
+   "crime": "violent crime rate per 100,000, FBI CIUS 2024 Table 6 MSA"
   }
  }
 }

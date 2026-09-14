@@ -10,9 +10,9 @@ export function MetricGuide({ lead }: { lead?: string }) {
         </p>
       ))}
       <p>
-        Salary, rent, home value, and crime stay blank unless a collection source gives a
-        comparable current metro figure. National medians and long-run history sit on source pages
-        as labeled facts, not on these cards.
+        Crime stays blank unless FBI CIUS 2024 Table 6 publishes a metro rate. School and
+        childcare sources stay in the library as tools and labeled facts, not as scores on these
+        cards. National medians and long-run history also sit on source pages, not on the cards.
       </p>
     </div>
   );

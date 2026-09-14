@@ -18,13 +18,17 @@ export function AboutScreen() {
             Where can a new tech grad actually afford to live and eventually raise a young family? I
             started from housing space, starting pay, jobs, safety, schools, childcare, parks, and
             commuting. This site holds {sources.length} annotated sources across {categories.length}{" "}
-            topics and {metros.length} metros. The cards show BEA figures and labeled facts from
-            those sources. If a source does not give a comparable metro figure, I leave the cell
-            blank.
+            topics and {metros.length} metros. The extras beyond a 15–20 source set add the FBI
+            metro crime table, the NCES school-system file, and the DOL county childcare-price
+            tool — I do not put county childcare quotes on the cards. The cards show BEA
+            price and income figures, BLS computer-and-math wages, and ACS rent and home values.
+            Crime appears only when FBI Table 6 publishes an MSA rate. If a source does not give a
+            comparable metro figure, I leave the cell blank.
           </p>
           <p>
             How to use this site: start on the map, open a metro for place-specific notes, read
-            every annotation in the library, and compare three metros on the BEA measures we have.
+            every annotation in the library, and compare three metros on the measures that have a
+            number.
           </p>
         </div>
         <div className="steps">
@@ -53,7 +57,7 @@ export function AboutScreen() {
           <div className="mono" style={{ marginBottom: 10 }}>
             What the numbers mean
           </div>
-          <MetricGuide lead="The map, metro cards, and compare use four BEA figures from 2023, released December 12, 2024." />
+            <MetricGuide lead="The map and compare use BEA 2023 price and income figures, BLS May 2025 computer-and-math wages, and ACS 2024 rent and home values. Crime is on a metro page only when FBI Table 6 has an MSA rate." />
         </div>
         <div>
           <div className="mono" style={{ marginBottom: 10 }}>
