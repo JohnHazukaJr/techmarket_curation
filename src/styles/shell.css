@@ -16,7 +16,8 @@ nav button[aria-current="page"]{background:var(--ink);color:#fff;border-color:va
 
 .screen{display:none;flex-direction:column;gap:18px}
 html[data-screen="map"] #s-map,html[data-screen="metro"] #s-metro,html[data-screen="library"] #s-library,
-html[data-screen="compare"] #s-compare,html[data-screen="source"] #s-source,html[data-screen="about"] #s-about{display:flex}
+html[data-screen="compare"] #s-compare,html[data-screen="source"] #s-source,html[data-screen="synthesis"] #s-synthesis,
+html[data-screen="about"] #s-about{display:flex}
 
 .intro{padding:26px 28px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start}
 .intro.single{grid-template-columns:minmax(0,1fr)}

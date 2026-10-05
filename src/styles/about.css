@@ -2,8 +2,15 @@
 .about h1{font-size:clamp(26px,3.2vw,38px);line-height:1.05;margin-bottom:14px}
 .about-block{display:grid;gap:12px}
 .about p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:70ch}
+.lede .map-link{background:none;border:0;padding:0;font:inherit;color:var(--accent);cursor:pointer}
+.lede .map-link:hover{color:var(--ink);text-decoration:underline}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
 .step{padding:15px 16px;display:grid;gap:7px;border-radius:calc(var(--r) - 8px);background:var(--glass-2);border:1px solid var(--edge)}
 .step .n{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.1em}
 .step b{font-size:13.5px}
 .step p{font-size:12.5px;line-height:1.5}
+.synth-byline{margin:0 0 4px;font-size:13px;color:var(--ink-3)}
+.synth-sources{margin:0;padding-left:22px;display:grid;gap:8px;max-width:70ch}
+.synth-sources li{font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.synth-sources button{background:none;border:0;padding:0;font:inherit;color:var(--accent);cursor:pointer;text-align:left}
+.synth-sources button:hover{color:var(--ink);text-decoration:underline}

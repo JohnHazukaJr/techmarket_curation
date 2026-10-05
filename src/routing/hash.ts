@@ -1,6 +1,6 @@
 import type { Route, Screen } from "../types/collection";
 
-const SCREENS: Screen[] = ["map", "metro", "library", "compare", "source", "about"];
+const SCREENS: Screen[] = ["map", "metro", "library", "compare", "source", "synthesis", "about"];
 
 export function parseHash(hash: string): Route {
   const path = hash.replace(/^#\/?/, "").replace(/\/$/, "");

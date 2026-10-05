@@ -5,6 +5,7 @@ import { LibraryScreen } from "./screens/LibraryScreen";
 import { MapScreen } from "./screens/MapScreen";
 import { MetroScreen } from "./screens/MetroScreen";
 import { SourceScreen } from "./screens/SourceScreen";
+import { SynthesisScreen } from "./screens/SynthesisScreen";
 import { CollectionProvider } from "./state/CollectionContext";
 import { ThemeProvider } from "./state/ThemeContext";
 
@@ -17,6 +18,7 @@ function Shell() {
       <LibraryScreen />
       <CompareScreen />
       <SourceScreen />
+      <SynthesisScreen />
       <AboutScreen />
       <div className="note">John Hazuka · CMPA 4301 · Texas Tech University</div>
     </div>

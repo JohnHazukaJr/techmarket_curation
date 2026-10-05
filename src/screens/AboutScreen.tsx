@@ -2,7 +2,7 @@ import { MetricGuide } from "../components/cite/MetricGuide";
 import { useCollection } from "../state/CollectionContext";
 
 export function AboutScreen() {
-  const { sources, categories, metros } = useCollection();
+  const { sources, categories, metros, go } = useCollection();
 
   return (
     <section className="screen" id="s-about">
@@ -30,7 +30,11 @@ export function AboutScreen() {
             <p>
               I would start on the map, open a metro for the place-specific notes, read the
               annotations in the library, and then compare three metros on the measures that
-              actually have a number.
+              actually have a number. The write-up that pulls this together is on its own{" "}
+              <button type="button" className="map-link" onClick={() => go("synthesis")}>
+                synthesis page
+              </button>
+              .
             </p>
           </div>
         </div>

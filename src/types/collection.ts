@@ -36,6 +36,7 @@ export type Screen =
   | "library"
   | "compare"
   | "source"
+  | "synthesis"
   | "about";
 
 export type Route =
@@ -44,6 +45,7 @@ export type Route =
   | { screen: "library" }
   | { screen: "compare" }
   | { screen: "source"; id: string }
+  | { screen: "synthesis" }
   | { screen: "about" };
 
 export type GeoLevel = "msa" | "city" | "region" | "national";

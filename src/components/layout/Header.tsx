@@ -6,6 +6,7 @@ const NAV: { screen: Screen; label: string }[] = [
   { screen: "map", label: "Map" },
   { screen: "library", label: "Source library" },
   { screen: "compare", label: "Compare" },
+  { screen: "synthesis", label: "Synthesis" },
   { screen: "about", label: "About" },
 ];
 
